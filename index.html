@@ -1,0 +1,245 @@
+<html >
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+    
+    <title>Agenda Sys</title>
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Script-Type" content="text/javascript">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="title" content="Agenda sys">
+    
+   
+    <link rel="stylesheet" type="text/css" media="screen" href="//cdn.schd.ws/common/css/bootstrap-custom.css?v3">
+    <link href="//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="style2.css">
+    
+   
+    <link href="data:;base64,iVBORw0KGgo=" type="image/png">
+    
+   
+   
+  
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    
+    
+    
+    <link rel="stylesheet" type="text/css" href="style.css">
+    </style>
+</head>
+
+<body id="schedorg" class="body-home body-embed">
+    <div id="tip"><img src="/loading.gif" height="24" alt="Loading…"></div>
+    <div id="body-outer">
+        <div id="body" class="container container-noheader">
+            <div id="body-inner">
+                <div id="page-home" class="row">
+                    <div id="top"></div>
+                    <div id="container-header-menu">
+                        <ul>
+                            <li id="menu-link-schedule" class="menu-link">
+                                <div id="views">
+                                    <a href="/" class="menu-link-active">Schedule</a>
+                                    <div class="popover">
+                                        <div class="popover-content">
+                                            <div class="arrow"><span></span></div>
+                                            <div class="popover-body">
+                                                <div class="popover-body-inner">
+                                                    <ul class="toggle">
+                                                        <li id="menu-link-tooltip" class="menu-link-active"><a href="/"><span></span>Simple</a></li>
+                                                        <li id="menu-link-detailed"><a href="/list/descriptions/"><span></span>Expanded</a></li>
+                                                        <li id="menu-link-grid"><a href="/grid/"><span></span>Grid</a></li>
+                                                        <li id="menu-link-venues"><a href="/venues/"><span></span>By Venue</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li id="menu-speakers" class="menu-link"><a href="/directory/speakers" class="">Speakers</a></li>
+                            <li id="menu-sponsors" class="menu-link"><a href="/directory/sponsors" class="">Sponsors</a></li>
+                            <li id="menu-volunteers" class="menu-link"><a href="/directory/volunteers" class="">Coordinators</a></li>
+                            <li class="menu-link" id="menu-search">
+                                <div class="dropdown">
+                                    <a id="header-menu-myprofile-link" class="dropdown-toggle" data-toggle="dropdown" href="/search" onclick="event.preventDefault()">Search</a>
+                                    <div class="popover dropdown-menu" role="menu" aria-labelledby="header-menu-myprofile-link">
+                                        <div class="popover-content">
+                                            <div class="arrow"><span></span></div>
+                                            <div class="popover-body">
+                                                <div class="popover-body-inner">
+                                                    <div id="sidebar-filters" class="sidebar-section vevent" itemscope="" itemtype="http://schema.org/Event">
+                                                        <div id="sidebar-filters-type">
+                                                           <script type="text/javascript">
+                                                               $( "#sidebar-filters-type" ).load( "lista.html");
+                                                           </script>
+                                                        </div>
+                                                    </div>
+                                                    <br class="s-clr">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="share">
+                                <div class="" style="height:32px">
+                                    <a href="/mobile-site" class="title-tooltip share-mobile" oldtitle="Mobile App + iCal" title=""><span></span></a>
+                                    <a href="/print" target="_blank" class="title-tooltip share-print" style="" oldtitle="Print Version" title="" rel="nofollow me noopener noreferrer"><span></span></a>
+                                    <a class="addthis_button_email title-tooltip share-email" oldtitle="Email To A Friend" title=""><span></span></a>
+                                    <a class="addthis_button_twitter title-tooltip share-twitter" oldtitle="Share on Twitter" title=""><span></span></a>
+                                    <a class="addthis_button_facebook title-tooltip share-facebook" oldtitle="Share on Facebook" title=""><span></span></a>
+                                </div>
+                            </li>
+                        </ul>
+                        <br class="s-clr">
+                    </div>
+
+
+
+                    <div id="content-outer">
+                        <div id="content" class="col-md-9">
+                           <script type="text/javascript">
+                               $("#content").load("content.php")
+                           </script>
+                        </div>
+                    </div>
+                    <div id="sidebar-outer">
+                        <div id="sidebar" class="col-md-3">
+                           <script type="text/javascript">
+                               $("#sidebar").load("sidebar.html")
+                           </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-link" style="width:auto;text-align:center">
+     
+    </div>
+
+
+    
+    <script type="text/javascript">
+
+    $(document).ready(function() {
+        $(".tip-description a").attr("target", "_blank");
+    });
+
+    var thisev = -1;
+    var delayShowTooltip = 0;
+    $(".event").hover(function() {
+            if (!$(this).hasClass('dedicated')) {
+                thisev = (this);
+                delayShowTooltip = setTimeout('showToolTip(thisev); delayedHideTooltipCancel();', 400);
+            }
+        },
+        function() {
+            if (!$(this).hasClass('dedicated')) {
+                clearTimeout(delayShowTooltip);
+                thisev = -1;
+                clearTimeout(tooltipwait);
+                delayedHideTooltip();
+            }
+        });
+
+    var showfull = false;
+    </script>
+ 
+    <script type="text/javascript" src="main.js"></script>
+   
+    
+    
+    <script>
+    var islocal = new RegExp(location.host);
+    var observer = new MutationObserver(function(mutations, observer) {
+        observer.disconnect();
+        $('a[target="_blank"]').each(function() {
+            if (!islocal.test($(this).attr('href'))) {
+                $(this).attr('rel', 'nofollow me noopener noreferrer');
+            }
+        }).after(function() {
+            observer.observe(document, {
+                subtree: true,
+                attributes: true
+            })
+        });
+    });
+    $(document).ready(function() {
+        observer.observe(document, {
+            subtree: true,
+            attributes: true
+        });
+    });
+    </script>
+    <script type="text/javascript">
+    var redirectTimeout;
+    var redirectCount = 0;
+    // post FB connect
+    function isSignedIn() {
+        //console.log(redirectCount, fbRedirectTo, username);
+        //if (0 == redirectCount) alert('start checking….');
+        redirectCount++;
+        if (redirectCount > 2000) {
+            // we're not waiting more than 10 minutes
+            clearInterval(redirectTimeout)
+            return
+        }
+        if (username && '/profile' == fbRedirectTo) {
+            clearInterval(redirectTimeout)
+            return
+        } else {}
+        $.get('/username', function(data) {
+            //console.log('GET ', data);
+            if (data.length) {
+                //console.log('isSignedIn', data, data.length);
+                var rhref = fbRedirectTo + '?iframe=yes&w=&sidebar=yes&bg=no';
+                //console.log(rhref);
+                window.location = rhref;
+                clearInterval(redirectTimeout);
+            }
+        })
+    }
+
+
+
+
+    var hasSchedule = false;
+    if (hasSchedule) {
+        $("#confirm-schedule-count").html(hasSchedule);
+        $("#confirm-schedule").slideDown();
+    } else {
+        $("#confirm-schedule").slideUp();
+    }
+
+    $("#confirm-schedule a").click(function() {
+        window.location.href = "?sendconfirm=yes";
+        return false;
+    });
+    </script>
+    
+    
+    <div id="footer-external"></div>
+    <script type="text/javascript">
+    /*window.NREUM || (NREUM = {});
+    NREUM.info = {
+        "beacon": "bam.nr-data.net",
+        "licenseKey": "e9065bd0b5",
+        "applicationID": "15695939",
+        "transactionName": "MlEHMkUAWxZSWkUMDAsbMBReTlwLV1xJSxMNRA==",
+        "queueTime": 0,
+        "applicationTime": 432,
+        "atts": "HhYERA0aSBg=",
+        "errorBeacon": "bam.nr-data.net",
+        "agent": ""
+    }*/
+    </script>
+    <div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;">
+        
+    </div>
+    <style id="service-icons-0"></style>
+</body>
+
+</html>
