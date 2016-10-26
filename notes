@@ -14,6 +14,7 @@ http://www.json-generator.com/
     "naziv":
       '{{lorem(repeat(2,7), "words")}}',
     "opis": '{{lorem(10, "words")}}',
-    "link":"http://www.google.com"
+    "link":"http://www.google.com",
+    "tip":'{{random("radionica", "debata", "panel","predavanje")}}'
   }
 ]
