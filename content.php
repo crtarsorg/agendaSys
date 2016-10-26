@@ -23,66 +23,41 @@ let podaci = [
     <?php  
             include_once 'misc/array_group_by.php';
             
-            $var_podaci =<<<POD
-            [{    
-                "grad":"beograd",
-                "mesto":"dom omladine",
-                "pocetak":"10:30",
-                "datum":"2016-10-07",
-                "ucesnici":"neki tamo",
-                "naziv":"Neki dugacak naslov sa elementima svega glavni naslov",
-                "opis":"Opis dogadjaja koji se desava",
-                "link":"http://www.google.com"
-            },
-            {    
-                "grad":"subotica",
-                "mesto":"dom omladine",
-                "pocetak":"10:30",
-                "datum":"2016-10-07",
-                "ucesnici":"neki tamo",
-                "naziv":"glavni naslov",
-                "opis":"Opis dogadjaja koji se desava",
-                "link":"http://www.google.com"
-            },
-            {    
-                "grad":"beograd",
-                "mesto":"dom omladine",
-                "pocetak":"11:30",
-                "datum":"2016-10-07",
-                "ucesnici":"neki tamo",
-                "naziv":"Opis dogadjaja koji se desava u Beogradu u domu omladine",
-                "opis":"Opis dogadjaja koji se desava",
-                "link":"http://www.google.com"
-            },
-            {    
-                "grad":"beograd",
-                "mesto":"sava centar",
-                "pocetak":"10:30",
-                "datum":"2016-10-07",
-                "ucesnici":"neki tamo",
-                "naziv":"glavni naslov",
-                "opis":"Opis dogadjaja koji se desava",
-                "link":"http://www.google.com"
-            }
 
-            ]
-POD;
 
-$niz_podataka = json_decode($var_podaci);
+            $ceo_tekst = "";
 
-                $temp = array_group_by($niz_podataka,'grad','pocetak');
+            $var_podaci = file_get_contents("data.json") ;
 
-                       
-                $intervali = $temp['beograd'];
+                   
+            $niz_podataka = json_decode($var_podaci);
+
+            
+
+                $temp = array_group_by($niz_podataka,'datum','pocetak');
+
+                   
+                //XXX ovo radi kad su dani jednog meseca u pitanju    
+                uksort($temp , function($a, $b) {
+                    return explode('-',$a)[2] > explode('-',$b)[2];
+                });
+
+                      
+                
+
+                $dani = $temp ; //array_reverse($temp) ;//['beograd'];
 
                 //mora da ide grupisanje po danu i filtriranje po vremenima    
                 
                         
                 $periodi = '';
                 
+                foreach ($dani as $dan_key => $intervali) {
+                    
+                $unosi = "";
 
                 foreach ($intervali as $int_key=>$interval_value) {
-                    $unosi = "";
+                   
 
                     foreach ($interval_value as  $value) {
                         $id = md5($value->naziv);
@@ -109,16 +84,17 @@ PERIOD;
                 $periodi .= $jedan_period;
 
                 }
+
                     //ok ima samo niz dana i datuma, tako da nije previse tesko
-                    $dan_nedelja = "Ponedeljak";
-                    $dan_mesec = "27 novembar";
+                    $dan_nedelja = "";
+                    $dan_mesec = $dan_key ;
 
                    $main_template = <<<MAIN
                     <a class="container-anchor" id="$datum"></a>
 
                         <div class="container-header ">
                             <div class="container-dates">
-                                <div class="current-date"><b>$dan_nedelja</b>, $dan_mesec</div>
+                                <div class="current-date"><b>$dan_nedelja</b> $dan_mesec</div>
                             </div>
                         </div>
                         <div class="container-top">&nbsp;</div>
@@ -128,8 +104,10 @@ PERIOD;
                         
 
 MAIN;
-                    echo $main_template;
-               
+                   $ceo_tekst .= $main_template;
+               }
+
+                echo $ceo_tekst;
 
             ?>
 </div>
