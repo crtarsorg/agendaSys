@@ -39,28 +39,13 @@
                     <div id="container-header-menu">
                         <ul>
                             <li id="menu-link-schedule" class="menu-link">
-                                <div id="views">
-                                    <a href="/" class="menu-link-active">Schedule</a>
-                                    <div class="popover">
-                                        <div class="popover-content">
-                                            <div class="arrow"><span></span></div>
-                                            <div class="popover-body">
-                                                <div class="popover-body-inner">
-                                                    <ul class="toggle">
-                                                        <li id="menu-link-tooltip" class="menu-link-active"><a href="/"><span></span>Simple</a></li>
-                                                        <li id="menu-link-detailed"><a href="/list/descriptions/"><span></span>Expanded</a></li>
-                                                        <li id="menu-link-grid"><a href="/grid/"><span></span>Grid</a></li>
-                                                        <li id="menu-link-venues"><a href="/venues/"><span></span>By Venue</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+                                    <a href="/" class="menu-link-active">Raspored</a>
+                                    
+                                
                             </li>
-                            <li id="menu-speakers" class="menu-link"><a href="/directory/speakers" class="">Speakers</a></li>
-                            <li id="menu-sponsors" class="menu-link"><a href="/directory/sponsors" class="">Sponsors</a></li>
-                            <li id="menu-volunteers" class="menu-link"><a href="/directory/volunteers" class="">Coordinators</a></li>
+                            <li id="menu-speakers" class="menu-link"><a href="/directory/speakers" class="">Ucesnici</a></li>
+                            
                             <li class="menu-link" id="menu-search">
                                 <div class="dropdown">
                                     <a id="header-menu-myprofile-link" class="dropdown-toggle" data-toggle="dropdown" href="/search" onclick="event.preventDefault()">Search</a>
@@ -85,11 +70,8 @@
                             </li>
                             <li class="share">
                                 <div class="" style="height:32px">
-                                    <a href="/mobile-site" class="title-tooltip share-mobile" oldtitle="Mobile App + iCal" title=""><span></span></a>
-                                    <a href="/print" target="_blank" class="title-tooltip share-print" style="" oldtitle="Print Version" title="" rel="nofollow me noopener noreferrer"><span></span></a>
-                                    <a class="addthis_button_email title-tooltip share-email" oldtitle="Email To A Friend" title=""><span></span></a>
-                                    <a class="addthis_button_twitter title-tooltip share-twitter" oldtitle="Share on Twitter" title=""><span></span></a>
-                                    <a class="addthis_button_facebook title-tooltip share-facebook" oldtitle="Share on Facebook" title=""><span></span></a>
+                                    
+                                    fb tw
                                 </div>
                             </li>
                         </ul>
@@ -152,94 +134,11 @@
    
     
     
-    <script>
-    /*var islocal = new RegExp(location.host);
-    var observer = new MutationObserver(function(mutations, observer) {
-        observer.disconnect();
-        $('a[target="_blank"]').each(function() {
-            if (!islocal.test($(this).attr('href'))) {
-                $(this).attr('rel', 'nofollow me noopener noreferrer');
-            }
-        }).after(function() {
-            observer.observe(document, {
-                subtree: true,
-                attributes: true
-            })
-        });
-    });
-    $(document).ready(function() {
-        observer.observe(document, {
-            subtree: true,
-            attributes: true
-        });
-    });*/
-    </script>
-    <script type="text/javascript">
-    /*var redirectTimeout;
-    var redirectCount = 0;
-    // post FB connect
-    function isSignedIn() {
-        //console.log(redirectCount, fbRedirectTo, username);
-        //if (0 == redirectCount) alert('start checking….');
-        redirectCount++;
-        if (redirectCount > 2000) {
-            // we're not waiting more than 10 minutes
-            clearInterval(redirectTimeout)
-            return
-        }
-        if (username && '/profile' == fbRedirectTo) {
-            clearInterval(redirectTimeout)
-            return
-        } else {}
-        $.get('/username', function(data) {
-            //console.log('GET ', data);
-            if (data.length) {
-                //console.log('isSignedIn', data, data.length);
-                var rhref = fbRedirectTo + '?iframe=yes&w=&sidebar=yes&bg=no';
-                //console.log(rhref);
-                window.location = rhref;
-                clearInterval(redirectTimeout);
-            }
-        })
-    }
-
-
-
-
-    var hasSchedule = false;
-    if (hasSchedule) {
-        $("#confirm-schedule-count").html(hasSchedule);
-        $("#confirm-schedule").slideDown();
-    } else {
-        $("#confirm-schedule").slideUp();
-    }
-
-    $("#confirm-schedule a").click(function() {
-        window.location.href = "?sendconfirm=yes";
-        return false;
-    });*/
-    </script>
-    
-    
+   
+   
     <div id="footer-external"></div>
-    <script type="text/javascript">
-    /*window.NREUM || (NREUM = {});
-    NREUM.info = {
-        "beacon": "bam.nr-data.net",
-        "licenseKey": "e9065bd0b5",
-        "applicationID": "15695939",
-        "transactionName": "MlEHMkUAWxZSWkUMDAsbMBReTlwLV1xJSxMNRA==",
-        "queueTime": 0,
-        "applicationTime": 432,
-        "atts": "HhYERA0aSBg=",
-        "errorBeacon": "bam.nr-data.net",
-        "agent": ""
-    }*/
-    </script>
-    <!-- <div id="_atssh" style="visibility: hidden; height: 1px; width: 1px; position: absolute; top: -9999px; z-index: 100000;">
-        
-    </div> -->
-    <style id="service-icons-0"></style>
+  
+    
 </body>
 
 </html>

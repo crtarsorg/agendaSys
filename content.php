@@ -59,13 +59,13 @@
                             $id = md5($value->naziv);
 
                         switch ($value->grad) {
-                            case "Beograd": $boja = 'boja1'; break;
-                            case "Nis": $boja = 'boja2'; break;
-                            case "Subotica": $boja = 'boja3'; break;
-                            case "Novi Sad": $boja = 'boja4'; break;
-                            case "Uzice": $boja = 'boja5'; break;
-                            case "Prijepolje": $boja = 'boja6'; break;
-                            case "Leskovac": $boja = 'boja7'; break;
+                            case "Beograd": $boja = 'boja1'; $mesto="beograd";  break;
+                            case "Nis": $boja = 'boja2'; $mesto="nis"; break;
+                            case "Subotica": $boja = 'boja3'; $mesto="subotica"; break;
+                            case "Novi Sad": $boja = 'boja4'; $mesto="novi_sad"; break;
+                            case "Uzice": $boja = 'boja5'; $mesto="uzice"; break;
+                            case "Prijepolje": $boja = 'boja6'; $mesto="prijepolje"; break;
+                            case "Leskovac": $boja = 'boja7'; $mesto="leskovac"; break;
                              
                                 
                                 default:
@@ -74,7 +74,7 @@
                             }    
 
                         $unosi .= <<<UNOS
-                           <span class="event $boja"><a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
+                           <span class="event $boja" mesto='$mesto'><a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
                             </span>  
 UNOS;
                     }
@@ -83,13 +83,15 @@ UNOS;
 
 
                     $jedan_period = <<<PERIOD
+                        <div>
                         <h3>$int_key</h3>
-                            <div class="container">
-                                <div class="container-inner">
-                                    $unosi  
+                        <div class="container">
+                            <div class="container-inner">
+                                $unosi  
 
-                                <br style="clear:both"> </div>
-                                </div>
+                            <br style="clear:both"> </div>
+                        </div>
+                        </div>
 PERIOD;
 
                     $periodi .= $jedan_period;
