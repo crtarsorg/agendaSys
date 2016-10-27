@@ -33,6 +33,7 @@
 <ul id="mainmenu">
     <li><a class="menuactive" href="index.php">Home</a></li>
     <li><a href="events.php">Events</a></li>
+    <li><a href="eventadd.php">Add Event</a></li>
     <li><a href="speakers.php">Speakers</a></li>
     <li><a href="locations.php">Locations</a></li>
 </ul>

@@ -1,12 +1,31 @@
 <?php include("menu.php")?>
 <?php
+
+//echo "<pre>";
+//var_dump($_POST);
+//echo "</pre>";
+
+
 //handle post
 //update existing
 if($_POST['action']=="update"){
-    $resp = "updating... ";
+    $resp = "updating data... ";
     $sqlupd = "  UPDATE events SET ename = '".$_POST[naziv]."', edesc = '".$_POST[opis]."', eldesc = '".$_POST[opislong]."', edate = '".$_POST[date]."', etime = '".$_POST[time]."', eloc = '".$_POST[lokacija]."', eact = '".$_POST[act]."'  WHERE eid = '".$_POST[eid]."' ";
     //echo $sqlupd;
     if (!$mysqli->query($sqlupd)) { $resp =  "Error: ". $mysqli->error; } else { $resp.= "OK";}
+
+    //update speakers
+    if(!$_POST[speakers]){
+        if (!$mysqli->query("DELETE FROM s2es WHERE evtid='".$_POST[eid]."'  ")) { $resp =  "<br> Error removing speakers: ". $mysqli->error; } else { $resp.= "<br> Speakers removed.";}
+    } else {
+        if (!$mysqli->query("DELETE FROM s2es WHERE evtid='".$_POST[eid]."'  ")) { $resp =  "<br> Error removing OLD speakers: ". $mysqli->error; } else { $resp.= "<br> OLD speakers removed...";}
+        //insert new speakers
+        foreach ($_POST[speakers] as $key => $value) {
+            $sqlnewspeak = " INSERT INTO s2es  (`s2esid`, `evtid`, `spkid`, `s2esord`) VALUES (NULL, '".$_POST[eid]."','".$value."','0')  ";
+            if (!$mysqli->query($sqlnewspeak)) { $resp =  "<br>Error adding speaker: ". $mysqli->error; } else { $resp.= "<br>New speaker added.";}
+        }
+    }
+
 }
 
 
@@ -46,6 +65,27 @@ while($row = $res->fetch_object()){
                 <?php } ?>
         </select>
 
+        <h3>Speakers</h3>
+
+<?php
+//get speakers for event
+$evspeak = $mysqli->query("SELECT spkid FROM s2es WHERE evtid='".$_GET[eid]."'  ") ;
+$evarr = mysqli_fetch_all($evspeak,MYSQLI_ASSOC);
+$evarrflat = array_map(function ($field) { return $field['spkid'];},$evarr);
+
+//get all speakers
+$respeak = $mysqli->query("SELECT * FROM speakers  ") ;
+
+while($rowspeak = $respeak->fetch_object()){
+
+    if( in_array($rowspeak->sid,$evarrflat)){$checked=" checked ";} else { $checked=" "; }
+
+?>
+
+        <label class="speakersinput" ><input  type="checkbox" <?php echo $checked;?> name="speakers[]" value="<?php echo $rowspeak->sid;?>"><?php echo $rowspeak->sname;?></input></label>
+<?php
+}
+?>
 
         <p style="text-align: right"><input name="" type="submit" value="SUBMIT CHANGES"></p>
     </form>
