@@ -83,14 +83,14 @@ UNOS;
 
 
                     $jedan_period = <<<PERIOD
-                        <div>
-                        <h3>$int_key</h3>
-                        <div class="container">
-                            <div class="container-inner">
-                                $unosi  
+                        <div class="jedan_period">
+                            <h3>$int_key</h3>
+                            <div class="container">
+                                <div class="container-inner">
+                                    $unosi  
 
-                            <br style="clear:both"> </div>
-                        </div>
+                                <br style="clear:both"> </div>
+                            </div>
                         </div>
 PERIOD;
 
@@ -103,18 +103,19 @@ PERIOD;
                         $dan_mesec = $dan_key ;
 
                        $main_template = <<<MAIN
-                        <a class="container-anchor" id="$datum"></a>
-
-                            <div class="container-header ">
-                                <div class="container-dates">
-                                    <div class="current-date"><b>$dan_nedelja</b> $dan_mesec</div>
+                            <div class="jedan_dan">
+                                <a class="container-anchor" id="$datum"></a>
+        
+                                <div class="container-header ">
+                                    <div class="container-dates">
+                                        <div class="current-date"><b>$dan_nedelja</b> $dan_mesec</div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="container-top">&nbsp;</div>
+                                <div class="container-top">&nbsp;</div>
 
-                            $periodi
+                                $periodi
 
-                            
+                            </div>               
 
 MAIN;
                    $ceo_tekst .= $main_template;

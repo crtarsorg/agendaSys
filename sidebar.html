@@ -5,11 +5,26 @@
         ev.preventDefault();
         var mesto = $(this).attr('mesto') ; 
         
+         $("#content div").show();
         $(".container-inner span:[mesto]").show();
         //.css('opacity','1'); //prikazi sve
         if(mesto != "svi")
         $(".container-inner span:not([mesto='"+mesto+"'])").hide()
         //.css('opacity','0.3');//sakrij druge
+        $(".jedan_dan").each(function(ind, el){
+            var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
+            if ( temp_nesakriveni.length == 0  ) {
+                $(el).hide();
+            }
+        })
+
+        $(".jedan_period").each(function(ind, el){
+            var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
+            if ( temp_nesakriveni.length == 0  ) {
+                $(el).hide();
+            }
+        })
+        
     })
 </script>
 
