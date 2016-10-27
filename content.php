@@ -43,18 +43,20 @@
                 //mora da ide grupisanje po danu i filtriranje po vremenima    
                 
                         
-                $periodi = '';
+                
                 
                 foreach ($dani as $dan_key => $intervali) {
                     
-                $unosi = "";
+                
 
                 //sortiranje po vremenu u jednom danu
                 ksort($intervali);
 
+                    $periodi = '';
+
                     foreach ($intervali as $int_key=>$interval_value) {
                        
-
+                        $unosi = "";
                         foreach ($interval_value as  $value) {
                             $id = md5($value->naziv);
 
@@ -77,7 +79,7 @@
                            <span class="event $boja" mesto='$mesto'><a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
                             </span>  
 UNOS;
-                    }
+                    } // end of unos; value
 
                   
 
@@ -96,7 +98,7 @@ PERIOD;
 
                     $periodi .= $jedan_period;
 
-                    }
+                    } // end of intervali
 
                         //ok ima samo niz dana i datuma, tako da nije previse tesko
                         $dan_nedelja = "";

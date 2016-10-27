@@ -855,7 +855,7 @@ top:20px;
 
 #sidebar-search {border-top: 0;margin: 6px 0 13px;}
 #sidebar-search #s-submit { margin-right: 0;height:22px;font-size:12px !important; }
-#sidebar-search input#s, #echo-recommend, #echo-search, .search-box {border: 1px solid #bbb; border-radius: 3px; color: #ccc; height: 26px; line-height: 22px; padding: 0 4px; vertical-align: top; width: 150px; }
+#sidebar-search input#s, #echo-recommend, #echo-search, .search-box {border: 1px solid #bbb; border-radius: 3px;  height: 26px; line-height: 22px; padding: 0 4px; vertical-align: top; width: 150px; }
 #sidebar-search input#s { background: #fff; height:22px;width:123px;margin-right:2px;display: inline-block;}
 #sidebar-search input#s:hover { background: #fff }
 .addthis_counter { position: relative; top: -15px; }
