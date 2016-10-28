@@ -18,13 +18,13 @@ if(preg_match('"^events/[0-9]+(/?)$"', $req, $matches)){
 if(preg_match('"^events/[0-9]+/speakers(/?)$"', $req, $matches)){
     listEventSpeakers(explode("/",$req)[1]);
 }
-//serve all events
+//list all speakers
 if(preg_match('"^speakers(/?)$"', $req, $matches)){
-    echo "speakers " .$req ;
+    listAllSpeakers();
 }
-//serve  event with ID
+//list single speaker
 if(preg_match('"^speakers/[0-9]+(/?)$"', $req, $matches)){
-    echo "single speaker " .$req ;
+    listSingleSpeakerDetails(explode("/",$req)[1]);
 }
 
 
@@ -33,22 +33,27 @@ function listAllEvents(){
     include("../admin/config.php"); // ovo je namerno u svakoj funkciji
     $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
     echo json_encode($res);
-
 }
-
 function listSingleEvent($evtid){
     include("../admin/config.php"); // ovo je namerno u svakoj funkciji
     $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid WHERE eid='".$evtid."' ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
     echo json_encode($res);
-
 }
 function listEventSpeakers($evtid){
     include("../admin/config.php"); // ovo je namerno u svakoj funkciji
     $res = mysqli_fetch_all($mysqli->query("SELECT * FROM s2es LEFT JOIN speakers ON s2es.spkid=speakers.sid WHERE evtid='".$evtid."'  "),MYSQLI_ASSOC ) ;
     echo json_encode($res);
 }
-
-
+function listAllSpeakers(){
+    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers  "),MYSQLI_ASSOC) ;
+    echo json_encode($res);
+}
+function listSingleSpeakerDetails($evtid){
+    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers WHERE sid='".$evtid."'   "),MYSQLI_ASSOC) ;
+    echo json_encode($res);
+}
 
 
 
