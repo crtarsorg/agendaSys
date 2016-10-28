@@ -1,7 +1,19 @@
 <script type="text/javascript">
     
 
-    $("[mesto],[tag]").click(function(ev) {
+   
+
+
+    $(function() {
+        $('#sidebar-search form').submit(function(ev) {
+          alert("asdada");
+            return false;
+        })
+
+
+
+        $("[mesto],[tag]").click(function(ev) {
+        
         ev.preventDefault();
         var mesto = $(this).attr('mesto') ; 
         
@@ -24,7 +36,10 @@
                 $(el).hide();
             }
         })
+
+      
         
+    })
     })
 </script>
 
@@ -35,7 +50,7 @@
         <div id="sidebar-filters-type">
             <ul>
                 <li id="sidebar-search">
-                    <form action="/" method="get">
+                    <form  method="get">
                         <input type="text" id="s" name="s" class="swap" placeholder="Pretraga" style="color: rgb(204, 204, 204);">&nbsp;
                         <input id="s-submit" type="submit" value="Search" class="button-submit" style="font-size: 10px;">
                     </form>
