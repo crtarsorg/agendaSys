@@ -5,9 +5,11 @@
 
 
     $(function() {
-        $('#sidebar-search form').submit(function(ev) {
-          alert("asdada");
-            return false;
+        $('#sidebar-search form').on("submit", function(ev) {
+          ev.preventDefault();
+          
+          
+          
         })
 
 

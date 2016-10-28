@@ -7,6 +7,34 @@
     .boja6{background-color: yellow;}
     .boja6{background-color: brown;}
 
+.boja{background-color: #2077B4; } 
+.boja{background-color: #B0E0F8; } 
+.boja{background-color: #7660AA; } 
+.boja{background-color: #D67896; } 
+.boja{background-color: #CB99C5; } 
+.boja{background-color: #FEDDBD; } 
+.boja{background-color: #FFDF80; } 
+.boja{background-color: #DFBD2C; } 
+.boja{background-color: #A3D17C; } 
+.boja{background-color: #54B954; } 
+
+
+.boja{background-color: #2BBAA6 ; } 
+.boja{background-color: #1CBECF ; } 
+.boja{background-color: #7DCCC3 ; } 
+.boja{background-color: #F37F6D ; } 
+.boja{background-color: #F8B8A9 ; } 
+.boja{background-color: #CBBF8E ; } 
+.boja{background-color: #C7C6C6 ; } 
+.boja{background-color: #9E9893 ; } 
+.boja{background-color: #4E777F ; } 
+.boja{background-color: #626262 ; } 
+
+
+
+
+
+
 </style>
 
 
