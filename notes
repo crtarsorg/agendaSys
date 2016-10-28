@@ -1,0 +1,20 @@
+
+http://www.json-generator.com/
+
+
+
+[
+  '{{repeat(15, 27)}}',
+  {
+    "grad":'{{random("Beograd", "Nis", "Subotica","Novi Sad", "Uzice","Prijepolje","Leskovac")}}',
+    "mesto":'{{random("dom omladine", "gradska kuca", "pozoriste","neka skola")}}',
+    "pocetak":'{{random("12:00", "12:30", "13:30","14:45", "14:00","15:00","16:00")}}',
+    "datum":'{{date(new Date(2016, 10, 7), new Date(2016, 10, 13), "YYYY-MM-dd")}}',
+    "ucesnici":'{{firstName()}} {{surname()}}  , {{firstName()}} {{surname()}}',
+    "naziv":
+      '{{lorem(repeat(2,7), "words")}}',
+    "opis": '{{lorem(10, "words")}}',
+    "link":"http://www.google.com",
+    "tip":'{{random("radionica", "debata", "panel","predavanje")}}'
+  }
+]
