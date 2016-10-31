@@ -37,11 +37,12 @@ ORD;
 
     function detalji_eventa( $id_event )
     {
-
+        //AIzaSyCIqFRtib8fmSMLKsEPzbQ5AREGUnhUTNQ
+        
 
         $opis_dogadjaja ="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est hic error cum quia, minus impedit voluptatibus laborum deleniti ab ipsum vitae quasi ratione, soluta tempora fugiat nostrum totam odit a!";
         
-        $koordinate_mesta = "20, 44";
+        $koordinate_mesta = "44.820517,20.427263";
 
         $korisnici = "";
 
@@ -49,6 +50,8 @@ ORD;
             $korisnici .= ucesnik();
         } 
 
+
+        $mapa = '<img src="https://maps.googleapis.com/maps/api/staticmap?center='. $koordinate_mesta .'&zoom=16&size=400x400&markers=color:blue%7Clabel:S%7C'. $koordinate_mesta .'&markers=size:tiny%7Ccolor:green%7CDelta+Junction,AK&markers=size:mid%7Ccolor:0xFFFF00%7Clabel:C%7CTok,AK&key=AIzaSyCIqFRtib8fmSMLKsEPzbQ5AREGUnhUTNQ" alt="">';
 
         $temp_sadrzaj = <<<TEMP_SADR
 
@@ -77,8 +80,10 @@ ORD;
             </div>
             <hr style="clear:both">
             
-            <div class="event-type">
-                $koordinate_mesta
+            <div class="event-type">                
+                <a href="https://www.google.com/maps/@$koordinate_mesta,16z" target='_blank'>
+                $mapa      
+                </a>           
             </div>
             
         </div>
