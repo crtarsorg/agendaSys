@@ -138,7 +138,7 @@ LA;
           
         }) //pretraga
 
-        $("#reset").click(function(ev) {
+        $("#btnReset").click(function(ev) {
             resetAll();
         })
 

@@ -1464,7 +1464,7 @@ top: 0px;
 .person {
 text-align:center;
 float: left;
-min-height:310px;
+min-height:150px;
 position: relative;
 border-radius: 4px;
 margin:0;
@@ -1479,7 +1479,7 @@ font-size:14px;
 font-size:20px;
 }
 
-.avatar {height:200px; width:200px;border-radius: 300px;float:none;margin:0 auto;}
+.avatar {height:100px; width:100px;border-radius: 300px;float:left;margin:0 auto;}
 .avatar img { height: 200px;width: auto;margin:0 auto; }
 .avatar-letter {font-size:80px;line-height:195px;font-weight:400;
     height:200px;

@@ -134,6 +134,8 @@ PERIOD;
                         //ok ima samo niz dana i datuma, tako da nije previse tesko
                         $dan_nedelja = "";
                         $dan_mesec = $dan_key ;
+                        $formated_date = date('d. m. Y.', strtotime($dan_mesec) );
+                        
 
                        $main_template = <<<MAIN
                             <div class="jedan_dan" date="$dan_mesec">
@@ -141,7 +143,7 @@ PERIOD;
         
                                 <div class="container-header ">
                                     <div class="container-dates">
-                                        <div class="current-date"><b>$dan_nedelja</b> $dan_mesec</div>
+                                        <div class="current-date"><b>$dan_nedelja</b> $formated_date</div>
                                     </div>
                                 </div>
                                 <div class="container-top">&nbsp;</div>

@@ -13,16 +13,42 @@
         return $samo_gradovi;      
     }
 
+
+    function ucesnik( $value='' )
+    {
+
+        $slika_ucesnika = "https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=Neki kul header ovde&w=320&h=320&fm=png";
+        $link_ucesnik ="http://www.google.com";
+        $ime_ucesnika = "Mario Maric";
+        $biografija = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est hic error cum quia, minus impedit voluptatibus laborum deleniti ab ipsum vitae quasi ratione, soluta tempora fugiat nostrum totam odit a!";
+
+        return <<<ORD
+            <div class="ucesnik">
+                <a  href="$link_ucesnik">
+                    <img class="avatar" src="$slika_ucesnika" alt="avatar">                            
+                </a>
+                <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
+               
+                <div class="event-details-role-bio">$biografija</div>
+            </div>
+
+ORD;
+    }
+
     function detalji_eventa( $id_event )
     {
 
 
-        $opis_dogadjaja ="par reci o dogadjaju";
-        $link_ucesnik ="http://www.google.com";
-        $ime_ucesnika = "Mario Maric";
-        $biografija = "par recu o ucesniku";
+        $opis_dogadjaja ="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est hic error cum quia, minus impedit voluptatibus laborum deleniti ab ipsum vitae quasi ratione, soluta tempora fugiat nostrum totam odit a!";
+        
         $koordinate_mesta = "20, 44";
-        $slika_ucesnika = "https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=Neki kul header ovde&w=320&h=320&fm=png";
+
+        $korisnici = "";
+
+        for ($i=0; $i < rand(2,7) ; $i++) { 
+            $korisnici .= ucesnik();
+        } 
+
 
         $temp_sadrzaj = <<<TEMP_SADR
 
@@ -31,7 +57,7 @@
             <hr style="clear:both">
 
             <div class="tip-roles">
-                <strong>Učesnici</strong>
+                
                 <div class="event-details-roles has-avatars">
                     
                     <div class="scrollable-details">
@@ -39,21 +65,13 @@
                         $opis_dogadjaja
                         </div>
                     </div>
+                    
+                    <hr style="clear:both">
 
-                    <div class="person">
-                        <a class="avatar" href="$link_ucesnik">
-                            <span>
-                                <img src="$slika_ucesnika" alt="avatar" >
-                            </span>
-                        </a>
-                        <h2><a href="$link_ucesnik">$ime</a></h2>
-                       
-                        <div class="event-details-role-bio">$biografija</div>
-                    </div>
+                    <strong>Učesnici</strong>
                     
-                    
-                    
-                    
+                    $korisnici    
+
                 </div>
                 <br class="s-clr">
             </div>
