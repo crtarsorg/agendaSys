@@ -106,7 +106,7 @@
 
 
                         $unosi .= <<<UNOS
-                            <span class="event $boja" mesto='$mesto'>
+                            <span class="event $boja" mesto='$mesto' tag='{$value->tip}'>
                                 <a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
                             </span> 
                             
@@ -143,8 +143,8 @@ PERIOD;
                         $dan_mesec = $dan_key ;
 
                        $main_template = <<<MAIN
-                            <div class="jedan_dan">
-                                <a class="container-anchor" id="$datum"></a>
+                            <div class="jedan_dan" date="$dan_mesec">
+                                <a class="container-anchor" id="$dan_mesec"></a>
         
                                 <div class="container-header ">
                                     <div class="container-dates">
