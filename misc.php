@@ -67,12 +67,21 @@
 
 TEMP_SADR;
 
-return $temp_sadrzaj;
+    return $temp_sadrzaj;
     }
 
 
     function boja_i_grad( $grad_val='' )
     {
+        #problem je kako numerisati boje kad im se salje samo jedna vrednost
+        
+        # verovatno treba niz svih gradova i, na osnovu indeksa staviti da bude ta boja 
+
+        /*$grad_val = strtolower($grad_val);
+        $grad_val = str_replace(' ','_',$grad_val);
+        //replace ćčšžđ
+        $grad_val = str_replace(array('ć','č','š','ž','đ'), array('c','c','s','z','dj'), $grad_val);*/
+
         $temp_vals =  array( );
 
         switch ($grad_val) {
