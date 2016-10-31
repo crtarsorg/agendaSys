@@ -42,40 +42,32 @@
 
     <?php  
             include_once 'misc/array_group_by.php';
-            
+            include_once 'misc.php';
 
 
             $ceo_tekst = "";
 
-            $var_podaci = file_get_contents("data.json") ;
-
-                   
+            $var_podaci = file_get_contents("data.json") ;                   
             $niz_podataka = json_decode($var_podaci);
 
             
 
-                $temp = array_group_by($niz_podataka,'datum','pocetak');
+            $temp = array_group_by($niz_podataka,'datum','pocetak');
 
-                   
-                //XXX ovo radi kad su dani jednog meseca u pitanju    
-                uksort($temp , function($a, $b) {
-                    return explode('-',$a)[2] > explode('-',$b)[2];
-                });
+               
+            //XXX ovo radi kad su dani jednog meseca u pitanju    
+            uksort($temp , function($a, $b) {
+                return explode('-',$a)[2] > explode('-',$b)[2];
+            });
 
-                      
-                
 
-                $dani = $temp ; //array_reverse($temp) ;//['beograd'];
-
-                //mora da ide grupisanje po danu i filtriranje po vremenima    
+            $dani = $temp ; //array_reverse($temp) ;//['beograd'];
+            //mora da ide grupisanje po danu i filtriranje po vremenima    
+            
                 
-                        
-                
-                
-                foreach ($dani as $dan_key => $intervali) {
+            foreach ($dani as $dan_key => $intervali) {
                     
-                
-
+            
                 //sortiranje po vremenu u jednom danu
                 ksort($intervali);
 
@@ -87,20 +79,10 @@
                         foreach ($interval_value as  $value) {
                             $id = md5($value->naziv);
 
-                        switch ($value->grad) {
-                            case "Beograd": $boja = 'boja1'; $mesto="beograd";  break;
-                            case "Nis": $boja = 'boja2'; $mesto="nis"; break;
-                            case "Subotica": $boja = 'boja3'; $mesto="subotica"; break;
-                            case "Novi Sad": $boja = 'boja4'; $mesto="novi_sad"; break;
-                            case "Uzice": $boja = 'boja5'; $mesto="uzice"; break;
-                            case "Prijepolje": $boja = 'boja6'; $mesto="prijepolje"; break;
-                            case "Leskovac": $boja = 'boja7'; $mesto="leskovac"; break;
-                             
-                                
-                                default:
-                                    # code...
-                                    break;
-                            }    
+                        $temp_vals = boja_i_grad( $value->grad );    
+
+                        $boja = $temp_vals[0];
+                        $mesto = $temp_vals[1];
 
                         $sadrzaj_detalji = detalji_eventa( $id_event );    
 
@@ -166,68 +148,3 @@ MAIN;
             ?>
 </div>
 
-
-
-
-
-
-<?php 
-
-    function detalji_eventa( $id_event )
-    {
-
-
-        $opis_dogadjaja ="par reci o dogadjaju";
-        $link_ucesnik ="http://www.google.com";
-        $ime_ucesnika = "Mario Maric";
-        $biografija = "par recu o ucesniku";
-        $koordinate_mesta = "20, 44";
-        $slika_ucesnika = "https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=Neki kul header ovde&w=320&h=320&fm=png";
-
-        $temp_sadrzaj = <<<TEMP_SADR
-
-        <div class="">
-    
-            <hr style="clear:both">
-
-            <div class="tip-roles">
-                <strong>Učesnici</strong>
-                <div class="event-details-roles has-avatars">
-                    
-                    <div class="scrollable-details">
-                        <div class="tip-description">
-                        $opis_dogadjaja
-                        </div>
-                    </div>
-
-                    <div class="person">
-                        <a class="avatar" href="$link_ucesnik">
-                            <span>
-                                <img src="$slika_ucesnika" alt="avatar" >
-                            </span>
-                        </a>
-                        <h2><a href="$link_ucesnik">$ime</a></h2>
-                       
-                        <div class="event-details-role-bio">$biografija</div>
-                    </div>
-                    
-                    
-                    
-                    
-                </div>
-                <br class="s-clr">
-            </div>
-            <hr style="clear:both">
-            
-            <div class="event-type">
-                $koordinate_mesta
-            </div>
-            
-        </div>
-
-TEMP_SADR;
-
-return $temp_sadrzaj;
-    }
-
-?>
