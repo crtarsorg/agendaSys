@@ -70,3 +70,6 @@ hr{
 .clear{
 	clear:both;
 }
+.inactive{
+	background-color:#fbbdbd;
+}

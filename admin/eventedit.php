@@ -10,7 +10,7 @@
 //update existing
 if($_POST['action']=="update"){
     $resp = "updating data... ";
-    $sqlupd = "  UPDATE events SET ename = '".$_POST[naziv]."', edesc = '".$_POST[opis]."', eldesc = '".$_POST[opislong]."', edate = '".$_POST[date]."', etime = '".$_POST[time]."', eloc = '".$_POST[lokacija]."', eact = '".$_POST[act]."'  WHERE eid = '".$_POST[eid]."' ";
+    $sqlupd = "  UPDATE events SET ename = '".$_POST[naziv]."', edesc = '".$_POST[opis]."', eldesc = '".$_POST[opislong]."', edate = '".$_POST[date]."', etime = '".$_POST[time]."', eloc = '".$_POST[lokacija]."', eact = '".$_POST[act]."', elink = '".$_POST[elink]."', epartneri = '".$_POST[epartneri]."'    WHERE eid = '".$_POST[eid]."' ";
     //echo $sqlupd;
     if (!$mysqli->query($sqlupd)) { $resp =  "Error: ". $mysqli->error; } else { $resp.= "OK";}
 
@@ -87,6 +87,15 @@ while($rowspeak = $respeak->fetch_object()){
 }
 ?>
 
+
+        <h3>Partneri</h3>
+        <textarea class="widgEditor" placeholder="Partneri" id="epartneri" name="epartneri" rows="5" cols="100"><?php echo $row->epartneri;?></textarea>     <br>
+
+        <h3>Link</h3>
+        <input placeholder="Link dogadjaja"  id="elink" name="elink" size="100" value="<?php echo $row->elink;?>" maxlength="200"><br>
+
+
+
         <p style="text-align: right"><input name="" type="submit" value="SUBMIT CHANGES"></p>
     </form>
     <hr>
@@ -107,7 +116,8 @@ $( document ).ready(function() {
 
 
     $( "#date" ).datepicker({ dateFormat: 'yy-mm-dd' } );
-    $( "#time" ).timepicker({ timeFormat: 'HH:mm:ss' });
+    //$( "#time" ).timepicker({ timeFormat: 'HH:mm:ss' });
+    $( "#time" ).timepicker();
 
 
 

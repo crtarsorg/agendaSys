@@ -15,9 +15,10 @@ while($row = $res->fetch_object()){
 $respeak = $mysqli->query("  SELECT sname FROM `s2es` LEFT JOIN speakers ON s2es.spkid=speakers.sid WHERE evtid='".$row->eid."'   ") ;
 $respeakres = mysqli_fetch_all($respeak,MYSQLI_ASSOC);
 
+if($row->eact==1){ $actclass = "";} else {$actclass = "inactive";}
 
 ?>
-    <div class="listevent">
+    <div class="listevent <?php echo $actclass;?> ">
             <div class="eventtime">
                 <h3><u><?php echo @date("d.m", @strtotime($row->edate));?></u></h3>
                 <h3><?php echo @date("H:i", @strtotime($row->etime));?></h3>

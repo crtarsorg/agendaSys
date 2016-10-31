@@ -9,21 +9,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
 
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <!--<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">  -->
+
 
     <!-- Helpers JS -->
     <script src="js/jscolor/jscolor.js"></script>
     <script src="js/widgeditor/widgEditor.js"></script>
+    <script src="js/timepicker/jquery.ui.timepicker.js"></script>
 
 
 
     <!-- Helpers CSS -->
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/widgeditor/widgEditor.css" rel="stylesheet" type="text/css">
+    <link href="css/timepicker/jquery.ui.timepicker.css" rel="stylesheet" type="text/css">
 
 
   </HEAD>
