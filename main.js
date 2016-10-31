@@ -1,21 +1,11 @@
+
+
+
+
+
 var isEmbed = false;
 
-$(".swap[name='s']").css("color","#ccc");
-swap_val=[];
-$(".swap[name='s']").each(function(i){
-  swap_val[i]=$(this).val();
-  $(this).focusin(function(){
-    $(this).css("color","black");
-    if($(this).val()==swap_val[i]){
-      $(this).val("");
-    }
-  }).focusout(function(){
-    if($.trim($(this).val())==""){
-      $(this).val(swap_val[i]);
-      $(this).css("color","#ccc");
-    }
-  });
-});
+
 
 var searchwait = 0;
 var msgonce = false;
@@ -75,29 +65,6 @@ function delayedHideTooltipCancel() {
 }
 
 // main
-$(function() {
-
-    if(!is_iphone && !is_ipad) {
-        $("#tip").hover(delayedHideTooltipCancel, delayedHideTooltip);
-        $("body").click(function() { lasttip = false; delayedHideTooltipCancel();
-        $("#tip").hide();
-        //if (isEmbed) parent.socket.postMessage('hidetip');
-        });
-    }
-
-    if (!is_iphone) {
-        // load all tooltips, and store them to the cache
-       
-
-        if (showfull) {
-          $.getJSON("/event-get-all-tooltips?page="+page, function(data, textStatus) { tips = data; });
-        }
-
-    }
-
-
-});
-
 
 
 
@@ -161,92 +128,8 @@ function setupDatePicker(es, ed)
   });
 }
 
-function showToolTip(lnk)
-{
-  var el = $(lnk);
-  var tx = el.offset().left + 7;
-  var dw = $(document).width();
-  if(typeof ow === 'undefined') ow = $("#tip").width();
 
-  if(ow > dw) $("#tip").css("width",dw+"px");
-  else $("#tip").css("width",ow+"px");
 
-  var wo = -dw + tx + $("#tip").width();
-  if (wo < 0) wo = 0;
-  tx = tx - wo;
-
-  if (el.hasClass('page-grid-event')) {
-    var strng = el.find('strong');
-    var ty = strng.offset().top + el.find("strong").height()/* + parseInt(el.css('margin-top'))*/;
-    var id = el.find(".grid-name").attr("id");
-  } else {
-    var ty = el.offset().top + el.height() + 4;
-    var id = el.find(".name").attr("id");
-  }
-
-  issubbed = el.hasClass("sub")?"true":"false";
-
-  if (!is_ipad) {
-    delayedHideTooltipCancel();
-  }
-
-  if(tips[id] == undefined)
-  {
-    clearTimeout(tooltipwait);
-    tooltipwait = setTimeout(function() {
-      $("#tip").html("<div class='popover'><div class='popover-content'><div class='arrow'><span></span></div><div class='popover-body'><div class='popover-body-inner'><div class='meta-loading'><img id='tip-loading' height='24' src='\/\/cdn.schd.ws\/common\/loading-3x.gif' \/></div></div></div></div></div>").show().css({left: tx + "px", top: ty + "px"});
-      if(wo) $("#tip .arrow").css("left", wo + "px");
-      if (el.hasClass('page-grid-event'))
-        issubbed = "";
-      else
-        issubbed = "&issubbed=" + issubbed;
-      $.get("/event-get?page="+page+"&tooltip=" + id + issubbed, function(ret) {
-        tips[id] = ret;
-        $("#tip").html(ret);
-        if(wo) $("#tip .arrow").css("left", wo + "px");
-        if(dw < 400) $("#tip .like-button").hide();
-        else $("#tip .like-button").show();
-      });
-    }, 400);
-
-  }
-  else
-  {
-    $("#tip").html(tips[id]).show().css({left: tx + "px", top: ty + "px"});
-    if(wo) $("#tip .arrow").css("left", wo + "px");
-    if(dw < 400) $("#tip .like-button").hide();
-    else $("#tip .like-button").show();
-    $("#tip span.outer-links a").attr('target', '_blank');
-  }
-  if (isEmbed) parent.socket.postMessage('tip-'+$("#tip").height());
-}
-
-function showToolTipMobile(lnk)
-{
-  var el = $(lnk);
-  var id = el.find("a.name").attr("id");
-  if(lasttip == id)
-  {
-    lasttip = false;
-    $("#tip").hide();
-    return;
-  }
-
-  lasttip = id;
-  var tx = el.offset().left + 1;
-  tx = Math.min(tx, $(window).width() - 440) + 130;
-  var ty = el.offset().top + el.height() + 22;
-
-  if(tips[id] == undefined)
-  {
-    $("#tip").html(L10n['loading']).show().css({left: tx + "px", top: ty + "px"});
-    $.get("/event-get?page="+page+"&tooltip=" + id, function(ret) { tips[id] = ret; $("#tip").html(ret); });
-  }
-  else
-  {
-    $("#tip").html(tips[id]).show().css({left: tx + "px", top: ty + "px"});
-  }
-}
 
 function toggleInfo(lnk, id)
 {
@@ -273,19 +156,7 @@ function toggleInfo(lnk, id)
   return false;
 }
 
-function printme(text)
-{
-  text=document;
-  print(text);
-}
 
-$(document).ready(function() {
-  $('#embed').hide();
-  $('a#embed-toggle').click(function() {
-    $('#embed').toggle(100);
-    return false;
-  });
-});
 
 
 
@@ -314,47 +185,6 @@ $(document).ready(
     );
   }
 );
-
-function validateusername(val) {
-  if (oun == val) {
-    unok = true;
-    return unnotify('un-ok', 'Your current username');
-  }
-
-  if (_valun(val)) {
-    isUnameAvailable(val);
-  } else {
-    unok = false;
-    unnotify('un-no', 'English letters, numbers and periods. No spaces.');
-  }
-}
-
-function _valun(uname) {
-  if ($.trim(uname).length < 3) return false;
-  var regex = new RegExp(/[^0-9a-zA-Z_\.]+/);
-  if(uname.match(regex)) return false;
-  else return true;
-}
-
-function isUnameAvailable(uname) {
-  unnotify('un-ok', 'checking');
-  $.get('/profile', {u:uname}, function(d) {
-    if ('ok' == d) { unok = true; unnotify('un-ok', 'Username is available');
-    } else { unok = false; unnotify('un-no', 'Username not available'); }
-  });
-}
-
-function conotify(classy, txt) {
-  $('#pwch-label .un-notify').remove();
-  $('#pwch-label').append('<strong class="un-notify"></strong>');
-  $('#pwch-label .un-notify').hide().addClass(classy).text(txt).fadeIn(150);
-}
-
-function unnotify(classy, txt) {
-  $('#un-label .un-notify').remove();
-  $('#un-label').append('<strong class="un-notify">checking</strong>');
-  $('#un-label .un-notify').delay(150).hide().addClass(classy).text(txt).fadeIn(150);
-}
 
 function toggleExpired(caller) {
   $('.container-hidden').slideToggle(

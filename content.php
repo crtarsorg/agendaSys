@@ -27,6 +27,16 @@
 </style>
 
 
+<script type="text/javascript">
+    
+    $(".event a").click(function(ev) {
+        ev.preventDefault();
+
+         $(this).parent().next().toggleClass('hidden', 1000);
+
+    })
+</script>
+
 
 <div id="content-inner">
 
@@ -96,12 +106,9 @@
 
 
                         $unosi .= <<<UNOS
-                           <span class="event $boja" mesto='$mesto'>
-                            <a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
-
+                            <span class="event $boja" mesto='$mesto'>
+                                <a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
                             </span> 
-
-                            
                             
                             <div class="hidden">
                                 <br style="clear:both">
@@ -179,7 +186,7 @@ MAIN;
 
         $temp_sadrzaj = <<<TEMP_SADR
 
-        <div class="event-details  ">
+        <div class="">
     
             <hr style="clear:both">
 

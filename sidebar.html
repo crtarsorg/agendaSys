@@ -1,49 +1,4 @@
-<script type="text/javascript">
-    
 
-   
-
-
-    $(function() {
-        $('#sidebar-search form').on("submit", function(ev) {
-          ev.preventDefault();
-          
-          
-          
-        })
-
-
-
-        $("[mesto],[tag]").click(function(ev) {
-        
-        ev.preventDefault();
-        var mesto = $(this).attr('mesto') ; 
-        
-         $("#content div").show();
-        $(".container-inner span:[mesto]").show();
-        //.css('opacity','1'); //prikazi sve
-        if(mesto != "svi")
-        $(".container-inner span:not([mesto='"+mesto+"'])").hide()
-        //.css('opacity','0.3');//sakrij druge
-        $(".jedan_dan").each(function(ind, el){
-            var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
-            if ( temp_nesakriveni.length == 0  ) {
-                $(el).hide();
-            }
-        })
-
-        $(".jedan_period").each(function(ind, el){
-            var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
-            if ( temp_nesakriveni.length == 0  ) {
-                $(el).hide();
-            }
-        })
-
-      
-        
-    })
-    })
-</script>
 
 
 
@@ -53,8 +8,12 @@
             <ul>
                 <li id="sidebar-search">
                     <form  method="get">
-                        <input type="text" id="s" name="s" class="swap" placeholder="Pretraga" style="color: rgb(204, 204, 204);">&nbsp;
-                        <input id="s-submit" type="submit" value="Search" class="button-submit" style="font-size: 10px;">
+                        <input type="text" id="searchFi" name="s" class="" placeholder="Pretraga" style="color: rgb(204, 204, 204);"> 
+                        <!-- <input id="s-submit" type="submit" value="Search" class="button-submit" style="font-size: 10px;"> -->
+                        <br style="clear:both">
+                        
+                        <button id="btnPretraga" type="button">Pretraga</button>
+                        <button id="btnReset" type="button">Reset</button>
                     </form>
                 </li>
                 <li class="ev_tags" id="sidebar-filters-dates">
@@ -123,3 +82,75 @@
     </div>
     <hr>
 </div>
+
+
+
+<script type="text/javascript">
+    
+    function resetAll() {
+        $("#content div").show();
+        $(".container-inner span:[mesto]").show();
+        $("span.event").show();
+    }
+
+    function sakrivanjeOstalih() { //sakrivanje ostalih eleemnata osim spanova
+        $(".jedan_dan").each(function(ind, el){
+                var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
+                if ( temp_nesakriveni.length == 0  ) {
+                    $(el).hide();
+                }
+            })
+
+        $(".jedan_period").each(function(ind, el){
+            var temp_nesakriveni = $(el).children().find("span:not(:hidden)");
+            if ( temp_nesakriveni.length == 0  ) {
+                $(el).hide();
+            }
+        })          
+    }
+
+
+    $(function() {
+        $('#btnPretraga').on("click", function(ev) {
+          ev.preventDefault();
+          
+          alert("nesto nesto");
+
+          var pojam_pretraga = $('#searchFi').val();
+
+          resetAll();
+
+          $("span.event").filter(function() { 
+            
+            return ( $(this).text().indexOf( pojam_pretraga) == -1); 
+
+            }).hide();
+
+          sakrivanjeOstalih();
+          
+        }) //pretraga
+
+        $("#reset").click(function(ev) {
+            resetAll();
+        })
+
+
+
+        $("[mesto],[tag]").click(function(ev) {
+        
+            ev.preventDefault();
+            var mesto = $(this).attr('mesto') ; 
+            
+            resetAll() ; //prikaziSve
+                       //.css('opacity','1'); //prikazi sve
+            if(mesto != "svi")
+            $(".container-inner span:not([mesto='"+mesto+"'])").hide()
+            //.css('opacity','0.3');//sakrij druge
+            
+            sakrivanjeOstalih();
+        
+        }) //"[mesto],[tag]"
+    }); //on load
+
+
+</script>

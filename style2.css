@@ -11,20 +11,20 @@ hr {border:0;border-bottom: 1px solid rgba(0,0,0,.1);}
 /* link colors */
 a { border: 0; color: #0960AB;text-decoration: none; }
 a:hover {  text-decoration: underline; }
-#schedorg .event a { color: #000 }
+#main-one .event a { color: #000 }
 #views .toggle li a {color: #0960AB;}
 #views .toggle li.menu-link-active a {color:#000;}
 
 /* font sizes for everything */
-#schedorg h1 {font-size: 20px;font-weight:700}
-#schedorg #logo h1 a {font-size:40px;}
-#schedorg h2 {font-size:16px;font-weight:700}
-#schedorg h3 {font-size:12px;}
-#schedorg h4 {font-size:14px;}
+#main-one h1 {font-size: 20px;font-weight:700}
+#main-one #logo h1 a {font-size:40px;}
+#main-one h2 {font-size:16px;font-weight:700}
+#main-one h3 {font-size:12px;}
+#main-one h4 {font-size:14px;}
 
 #page-event-sharing .button {font-size:12px;}
 #tip, #sidebar, .event-details-timeandplace, .event-type, small, input, .event-details-role,#page-grid table, .tip-custom-fields,.people-container .person{font-size:12px;line-height:1.5em;}
-#tip h2, #views .toggle li a,.input-textarea,#page-me .button, #schedorg #page-me #page-me-connections h2,#page-event .event-details-timeandplace, #page-event .event-type, #page-event .tip-custom-fields, .input, .onboard-step, #footer-link,#page-me-networks .network-link a {font-size:14px;}
+#tip h2, #views .toggle li a,.input-textarea,#page-me .button, #main-one #page-me #page-me-connections h2,#page-event .event-details-timeandplace, #page-event .event-type, #page-event .tip-custom-fields, .input, .onboard-step, #footer-link,#page-me-networks .network-link a {font-size:14px;}
 #container-header-menu, .container-header-name, .button-submit, #search-message .search-box, .attendee-avatar a, #page-help-menu li, #page-signup label, #search-message #search-clear, #admin a, #sidebar-menu #sidebar-menu-myprofile-link, #sidebar-menu #sidebar-menu-items li a.sidebar-menu-item, #header-official, #header-profile-menu, #header-profile #header-menu-myprofile-link, #header-menu-myprofile-link, .container-dates,#page-me-profile-data, #page-me-profile-about, #page-me-connections, #page-event-sharing h4 {font-size: 16px;line-height:1.8em;}
 #tip .avatar-letter, #page-me-connections .avatar-letter, #sidebar .avatar-letter, #header-menu .avatar-letter, #header-profile-menu .avatar-letter {font-size:22px;line-height:46px;}
 #header-profile .avatar-letter {font-size:20px;line-height:40px;background:#333;display:block;}
@@ -297,8 +297,8 @@ container-hidden .container-header {float:left;margin:10px;}
 .sub .name span.event-seats {opacity:0;}
 .sub .name span.event-seats-waitlisted {opacity:1;}
 span.event-checkin {background-color: #C10000 !important;}
-#schedorg #content .eventbrite-auto .ev-save { background: #fff url(//cdn.schd.ws/star-eventbrite.png) 3px 3px no-repeat !important; cursor: pointer; filter: alpha(opacity=100); opacity: 1;width:48px;}
-#schedorg #content .eventbrite-auto .name {margin-left:50px;}
+#main-one #content .eventbrite-auto .ev-save { background: #fff url(//cdn.schd.ws/star-eventbrite.png) 3px 3px no-repeat !important; cursor: pointer; filter: alpha(opacity=100); opacity: 1;width:48px;}
+#main-one #content .eventbrite-auto .name {margin-left:50px;}
 .event-loggedin .name { margin-left: 27px }
 
 .content-header-breadcrumb .content-header-active { font-weight: 700 }
@@ -810,7 +810,7 @@ top:20px;
 #tip ul li{ list-style: disc inside }
 #tip ul.tip-custom-fields li {list-style:none;}
 #tip ol li{ list-style: decimal inside }
-#schedorg #tip .has-avatars li { height: auto }
+#main-one #tip .has-avatars li { height: auto }
 
 .attendee-avatar .av { background: #fff; border: 1px solid #ccc; display: block; float: left; margin: 0 10px 0 5px; padding: 3px; }
 .description ol li, .tip-section ol li { list-style: decimal inside }
@@ -1423,7 +1423,7 @@ width:15px;height:15px;margin-right:9px;	}
 .col-md-9 {padding-right:0;}
 .col-md-3 {width:auto;position:relative;}
 #footer-link-left {width:300px;margin:0 auto;}
-#schedorg #logo h1 a {font-size:30px;line-height:35px;}
+#main-one #logo h1 a {font-size:30px;line-height:35px;}
 .hidden-xs {display:none;}
 }
 
@@ -1433,7 +1433,7 @@ width:15px;height:15px;margin-right:9px;	}
 .event {display:block;}
 .event-seats {float:right;margin:7px;padding-top:1px !important;}
 #content-inner h3 { margin-top:7px; }
-#schedorg #logo h1 a {font-size:25px;line-height:30px;}
+#main-one #logo h1 a {font-size:25px;line-height:30px;}
 #menu-search .dropdown-menu{ left:-100px !important;}
 #menu-search .popover-content .arrow {margin-left:110px !important;}
 #tip {width:370px !important;left:0 !important;}
@@ -1748,7 +1748,7 @@ margin-right:10px;
 
 @media(max-width:480px) {
     .person {width:100%;min-height:100px;padding-bottom:40px;clear:left;}
-    #schedorg .container-sponsors {margin-right:20px;}
+    #main-one .container-sponsors {margin-right:20px;}
 }
 
 @media(max-width:320px) {
