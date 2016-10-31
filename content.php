@@ -29,10 +29,21 @@
 
 <script type="text/javascript">
     
-    $(".event a").click(function(ev) {
+    $(".event a, span.event ").on('click tap',function(ev) {
         ev.preventDefault();
 
-         $(this).parent().next().toggleClass('hidden', 1000);
+        var el_temp = $(this).next();
+        
+        
+
+        if(this.tagName=="A"){
+
+            el_temp = $(this).parent().parent().next() ;
+        }
+
+
+        console.log(el_temp);
+        el_temp.toggleClass('hidden', 1000);
 
     })
 </script>
