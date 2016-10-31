@@ -69,10 +69,16 @@
                                 </div>
                             </li>
                             <li class="share">
-                                <div class="" style="height:32px">
-                                    
-                                    fb tw
-                                </div>
+                                
+                                    <a style="border: none;" href="https://www.facebook.com/sharer/sharer.php?display=popup&ref=plugin&src=like&u="
+                                       onclick="javascript:window.open(this.href + window.location.href.replace('#','%23'), '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                       target="_blank" title="Share on Facebook"><img class="socialImg" src="img/fb.png"  style="width: 42px;">
+                                    </a>
+                            
+                                    <a style="border: none;" href="https://twitter.com/intent/tweet?text= &tw_p=tweetbutton&url="
+                                       onclick="javascript:window.open( this.href +  window.location.href.replace('#','%23') + '&original_referer=' +  window.location.href.replace('#','%23') , '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+                                       target="_blank" title="Share on Twitter"><img class="socialImg" src="img/tw.jpg" style="width: 42px;">
+                                    </a>
                             </li>
                         </ul>
                         <br class="s-clr">
