@@ -1,38 +1,27 @@
 <style type="text/css">
-    .boja1{background-color: red;}
-    .boja2{background-color: blue;}
-    .boja3{background-color: green;}
-    .boja4{background-color: grey;}
-    .boja5{background-color: orange;}
-    .boja6{background-color: yellow;}
-    .boja6{background-color: brown;}
 
-.boja{background-color: #2077B4; } 
-.boja{background-color: #B0E0F8; } 
-.boja{background-color: #7660AA; } 
-.boja{background-color: #D67896; } 
-.boja{background-color: #CB99C5; } 
-.boja{background-color: #FEDDBD; } 
-.boja{background-color: #FFDF80; } 
-.boja{background-color: #DFBD2C; } 
-.boja{background-color: #A3D17C; } 
-.boja{background-color: #54B954; } 
+.boja1{background-color: #2077B4; } 
+.boja2{background-color: #B0E0F8; } 
+.boja3{background-color: #7660AA; } 
+.boja4{background-color: #D67896; } 
+.boja5{background-color: #CB99C5; } 
+.boja6{background-color: #FEDDBD; } 
+.boja7{background-color: #FFDF80; } 
+.boja8{background-color: #DFBD2C; } 
+.boja9{background-color: #A3D17C; } 
+.boja10{background-color: #54B954; } 
 
 
-.boja{background-color: #2BBAA6 ; } 
-.boja{background-color: #1CBECF ; } 
-.boja{background-color: #7DCCC3 ; } 
-.boja{background-color: #F37F6D ; } 
-.boja{background-color: #F8B8A9 ; } 
-.boja{background-color: #CBBF8E ; } 
-.boja{background-color: #C7C6C6 ; } 
-.boja{background-color: #9E9893 ; } 
-.boja{background-color: #4E777F ; } 
-.boja{background-color: #626262 ; } 
-
-
-
-
+.boja10{background-color: #2BBAA6 ; } 
+.boja11{background-color: #1CBECF ; } 
+.boja12{background-color: #7DCCC3 ; } 
+.boja13{background-color: #F37F6D ; } 
+.boja14{background-color: #F8B8A9 ; } 
+.boja15{background-color: #CBBF8E ; } 
+.boja16{background-color: #C7C6C6 ; } 
+.boja17{background-color: #9E9893 ; } 
+.boja18{background-color: #4E777F ; } 
+.boja19{background-color: #626262 ; } 
 
 
 </style>
@@ -103,9 +92,23 @@
                                     break;
                             }    
 
+                        $sadrzaj_detalji = detalji_eventa( $id_event );    
+
+
                         $unosi .= <<<UNOS
-                           <span class="event $boja" mesto='$mesto'><a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
-                            </span>  
+                           <span class="event $boja" mesto='$mesto'>
+                            <a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
+
+                            </span> 
+
+                            
+                            
+                            <div class="hidden">
+                                <br style="clear:both">
+                                $sadrzaj_detalji
+                                <br style="clear:both">
+                            </div> 
+                            
 UNOS;
                     } // end of unos; value
 
@@ -158,3 +161,66 @@ MAIN;
 
 
 
+
+
+
+<?php 
+
+    function detalji_eventa( $id_event )
+    {
+
+
+        $opis_dogadjaja ="par reci o dogadjaju";
+        $link_ucesnik ="http://www.google.com";
+        $ime_ucesnika = "Mario Maric";
+        $biografija = "par recu o ucesniku";
+        $koordinate_mesta = "20, 44";
+        $slika_ucesnika = "https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=Neki kul header ovde&w=320&h=320&fm=png";
+
+        $temp_sadrzaj = <<<TEMP_SADR
+
+        <div class="event-details  ">
+    
+            <hr style="clear:both">
+
+            <div class="tip-roles">
+                <strong>Učesnici</strong>
+                <div class="event-details-roles has-avatars">
+                    
+                    <div class="scrollable-details">
+                        <div class="tip-description">
+                        $opis_dogadjaja
+                        </div>
+                    </div>
+
+                    <div class="person">
+                        <a class="avatar" href="$link_ucesnik">
+                            <span>
+                                <img src="$slika_ucesnika" alt="avatar" >
+                            </span>
+                        </a>
+                        <h2><a href="$link_ucesnik">$ime</a></h2>
+                       
+                        <div class="event-details-role-bio">$biografija</div>
+                    </div>
+                    
+                    
+                    
+                    
+                </div>
+                <br class="s-clr">
+            </div>
+            <hr style="clear:both">
+            
+            <div class="event-type">
+                $koordinate_mesta
+            </div>
+            
+        </div>
+
+TEMP_SADR;
+
+return $temp_sadrzaj;
+    }
+
+?>

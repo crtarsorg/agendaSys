@@ -44,7 +44,7 @@
                                     
                                 
                             </li>
-                            <li id="menu-speakers" class="menu-link"><a href="/directory/speakers" class="">Ucesnici</a></li>
+                            <li id="menu-speakers" class="menu-link"><a href="ucesnici.php" class="">Ucesnici</a></li>
                             
                             <li class="menu-link" id="menu-search">
                                 <div class="dropdown">
@@ -101,44 +101,10 @@
     <div id="footer-link" style="width:auto;text-align:center">
      
     </div>
-
-
     
-    <script type="text/javascript">
-
-    $(document).ready(function() {
-        $(".tip-description a").attr("target", "_blank");
-    });
-
-    var thisev = -1;
-    var delayShowTooltip = 0;
-    $(".event").hover(function() {
-            if (!$(this).hasClass('dedicated')) {
-                thisev = (this);
-                delayShowTooltip = setTimeout('showToolTip(thisev); delayedHideTooltipCancel();', 400);
-            }
-        },
-        function() {
-            if (!$(this).hasClass('dedicated')) {
-                clearTimeout(delayShowTooltip);
-                thisev = -1;
-                clearTimeout(tooltipwait);
-                delayedHideTooltip();
-            }
-        });
-
-    var showfull = false;
-    </script>
- 
-    <script type="text/javascript" src="main.js"></script>
-   
-    
-    
-   
-   
     <div id="footer-external"></div>
   
-    
+    <script type="text/javascript" src="main.js"></script>
 </body>
 
 </html>
