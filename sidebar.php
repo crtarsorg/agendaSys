@@ -46,27 +46,6 @@
                     <!-- nemam pojma da li se negde koristi ovaj id -->
                 </li>
 
-                <!-- <li id="type-1" class="lev1 ev_2"><a href="#" mesto="beograd" title="Pogledajte sva dešavanja u Beogradu"><span class="box"></span> Beograd</a></li>
-                
-                <li id="type-3" class="lev1 ev_3"><a href="#" mesto="nis" title="Pogledajte sva dešavanja u Nis" ><span class="box"></span>Nis</a>
-                </li>
-                
-                <li id="type-4" class="lev1 ev_4"><a href="#" mesto="subotica" title="Pogledajte sva dešavanja u Subotica" ><span class="box"></span>Subotica</a>
-                </li>
-                
-                <li id="type-5" class="lev1 ev_5"><a href="#" mesto="novi_sad" title="Pogledajte sva dešavanja u Novi Sad" ><span class="box"></span>Novi Sad</a>
-                </li>
-                
-                <li id="type-6" class="lev1 ev_6"><a href="#" mesto="uzice" title="Pogledajte sva dešavanja u Uzice" ><span class="box"></span>Uzice</a>
-                </li>
-                
-                <li id="type-7" class="lev1 ev_7"><a href="#" mesto="prijepolje" title="Pogledajte sva dešavanja u Prijepolje" ><span class="box"></span>Prijepolje</a>
-                </li>
-                
-                <li id="type-8" class="lev1 ev_8"><a href="#" mesto="leskovac" title="Pogledajte sva dešavanja u Leskovac" ><span class="box"></span>Leskovac</a>
-                </li> -->
-
-
                 <?php  
                     include 'misc.php';
                     
@@ -83,11 +62,10 @@
 
                         $boja = $temp_vals[0];
                         $grad = $temp_vals[1];
+                        $val_te = $key + 1;
 
-
-                            //ev_{$key+1}
                         echo <<<LA
-                        <li id="type-{$key}" class="lev1 ">
+                        <li id="type-{$$val_te}" class="lev1 ">
                         <a href="#" mesto="$grad" title="Pogledajte sva dešavanja ovom gradu"><span class="box $boja"></span>$value</a>
                         </li>
 LA;
