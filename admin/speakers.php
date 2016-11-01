@@ -1,7 +1,7 @@
 <?php include("menu.php")?>
 <?php
 //handle post
-if($_SERVER['SERVER_NAME']=="127.0.0.1") {$uplpath="../spkimages/";}else {$uplpath="../../program.nedeljaparlamentarizma.rs/spkimages/";}
+if($_SERVER['SERVER_NAME']=="127.0.0.1") {$uplpath="../spkimages/";$imgpath="../spkimages/";}else {$uplpath="../../program.nedeljaparlamentarizma.rs/spkimages/";$imgpath="http://program.nedeljaparlamentarizma.rs/spkimages/";}
 
 
 //update existing
@@ -66,7 +66,7 @@ while($row = $res->fetch_object()){
         <input id="sid" type="hidden" name="sid" value="<?php echo $row->sid;?>">
         <input placeholder="Speaker name"  id="sname" name="sname" size="100" value="<?php echo $row->sname;?>" maxlength="200"><br>
         <textarea class="widgEditor" placeholder="Speaker description" id="sdesc<?php echo $row->sid;?>" name="sdesc" rows="5" cols="100"><?php echo $row->sdesc;?></textarea>     <br>
-        <img  class="speakerimage" src="<?php echo $uplpath.$row->simg;?>" alt="" /><input type="file" name="simage" id="simage" > <br>
+        <img  class="speakerimage" src="<?php echo $imgpath.$row->simg;?>" alt="" /><input type="file" name="simage" id="simage" > <br>
         <p style="text-align: right"><input name="" type="submit" value="EDIT SPEAKER INFO"></p>
     </form>
     <hr>
