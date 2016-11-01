@@ -6,6 +6,10 @@
 
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
 	<link rel="stylesheet" href="style2.css">
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    
+
 </head>
 <body>
 
@@ -15,13 +19,15 @@
 
 	<?php 
 
+	//kada se klikne na jednog
+	//da se otvara popup sa njegovim detaljima
+
 	$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakers"); //speakers
 
 	$podaci  = json_decode($podaci);
 
 	foreach ($podaci as  $ucesnik) {
 		echo ucesnik( $ucesnik ); 
-
 	}
 	
 
@@ -42,8 +48,8 @@ function ucesnik($ucesnik)
 	$ime_ucesnika = $ucesnik->sname;
 	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
 	// $ucesnik->simg;
-	$kompanija = $ucesnik->sdesc;
-	$pozicija = "";
+	$kompanija = $ucesnik->sorg ; 
+	$pozicija = $ucesnik->stitula ; 
 
 	$stampa_ucesnika = <<<LALA
 		
@@ -72,8 +78,48 @@ LALA;
 	return $stampa_ucesnika;
 }
 
+
+	function ucesnik1()
+	{
+		
+
+	$link = "http://google.com";
+	$ime_ucesnika = "Petar Petrovic";
+	$kompanija = "crta";
+	$pozicija = "Levo";
+	$biografija = "desno";
+
+	$temp =  <<<LALA
+
+		    <div id="page-me-profile">
+		        <span id="page-me-profile-avatar"><span><img src="$link" alt="avatar"  ></span></span>
+		        <h1 id="page-me-name">$ime_ucesnika</h1>
+		        <div id="page-me-profile-data" class="event-details-role-company">
+		            <strong>$komanija</strong>
+		            <br> $pozicija
+		            <br>
+		        </div>
+		        <div id="page-me-profile-about">
+		            <strong>Biografija:</strong> $biografija
+		            <br>
+		            <br> </div>
+		    </div>
+LALA;
+
+	return $temp ;
+	}
+
 ?>
 
-	
+	<script>
+		$(function() {
+
+			$(".person a").click(function(ev) {
+				ev.preventDefault();
+
+				alert("asdad")
+			});
+		})
+	</script>
 </body>
 </html>
