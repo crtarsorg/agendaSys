@@ -14,14 +14,14 @@ if($_POST['action']=="update"){
             $resp .= " File uploaded. "; $updimage= ", simg='".$_POST[sid].".".strtolower($imgftype)."' ";   } else {  $resp .= " Error uploading your file. "; }
     }
 
-    $sqlupd = "  UPDATE speakers SET sname = '".$_POST[sname]."', sdesc = '".$_POST[sdesc]."' ".$updimage."  WHERE sid = '".$_POST[sid]."' ";
+    $sqlupd = "  UPDATE speakers SET sname = '".$_POST[sname]."', stitula = '".$_POST[stitula]."', sorg = '".$_POST[sorg]."', sdesc = '".$_POST[sdesc]."' ".$updimage."  WHERE sid = '".$_POST[sid]."' ";
     if (!$mysqli->query($sqlupd)) { $resp =  " Error: ". $mysqli->error; } else { $resp.= " OK ";}
 }
 
 //insert NEW
 if($_POST['action']=="addnew"){
     $resp = "adding new... ";
-    $sqlins = "INSERT INTO speakers (`sid`, `sname`, `sdesc`) VALUES (NULL, '".$_POST[sname]."', '".$_POST[sdesc]."' ) ";
+    $sqlins = "INSERT INTO speakers (`sid`, `sname`, `sdesc`, `stitula`, `sorg`) VALUES (NULL, '".$_POST[sname]."', '".$_POST[sdesc]."', '".$_POST[stitula]."' , '".$_POST[sorg]."'  ) ";
     if (!$mysqli->query($sqlins)) { $resp =  "Error: ". $mysqli->error; } else {
         $resp.= "OK";
         //if image
@@ -48,7 +48,13 @@ if($_POST['action']=="addnew"){
     <form action="speakers.php" method="POST" enctype="multipart/form-data">
         <input id="action" type="hidden" name="action" value="addnew">
         <input id="sid" type="hidden" name="sid" value="<?php echo $row->sid;?>">
+
+        <input placeholder="Titula"  id="stitula" name="stitula" size="100" value="<?php echo $row->stitula;?>" maxlength="200"><br>
+
         <input placeholder="Speaker name"  id="sname" name="sname" size="100" value="<?php echo $row->sname;?>" maxlength="200"><br>
+
+        <input placeholder="Organizacija"  id="sorg" name="sorg" size="100" value="<?php echo $row->sorg;?>" maxlength="200"><br>
+
         <textarea class="widgEditor" placeholder="Speaker description" id="sdesc<?php echo $row->sid;?>" name="sdesc" rows="5" cols="100"><?php echo $row->sdesc;?></textarea>     <br>
         <input type="file" name="simage" id="simage" > <br>
         <p style="text-align: right"><input name="" type="submit" value="ADD NEW SPEAKER"></p>
@@ -64,7 +70,13 @@ while($row = $res->fetch_object()){
     <form action="speakers.php" method="POST" enctype="multipart/form-data">
         <input id="action" type="hidden" name="action" value="update">
         <input id="sid" type="hidden" name="sid" value="<?php echo $row->sid;?>">
+
+        <input placeholder="Titula"  id="stitula" name="stitula" size="100" value="<?php echo $row->stitula;?>" maxlength="200"><br>
+
         <input placeholder="Speaker name"  id="sname" name="sname" size="100" value="<?php echo $row->sname;?>" maxlength="200"><br>
+
+        <input placeholder="Organizacija"  id="sorg" name="sorg" size="100" value="<?php echo $row->sorg;?>" maxlength="200"><br>
+
         <textarea class="widgEditor" placeholder="Speaker description" id="sdesc<?php echo $row->sid;?>" name="sdesc" rows="5" cols="100"><?php echo $row->sdesc;?></textarea>     <br>
         <img  class="speakerimage" src="<?php echo $imgpath.$row->simg;?>" alt="" /><input type="file" name="simage" id="simage" > <br>
         <p style="text-align: right"><input name="" type="submit" value="EDIT SPEAKER INFO"></p>
