@@ -56,12 +56,12 @@ while($row = $res->fetch_object()){
         <select id="lokacija" name="lokacija" size="1">
              <option  value=""></option>
             <?php
-                $reslok = $mysqli->query("SELECT lid,lname FROM locations  ") ;
+                $reslok = $mysqli->query("SELECT lid,lname, lcity FROM locations ORDER BY lcity  ") ;
                 while($rowlok = $reslok->fetch_object()){
                     if($row->eloc==$rowlok->lid){$selected = ' selected="selected" '; } else {$selected = '  '; }
 
                 ?>
-                    <option  <?php echo $selected;?> value="<?php echo $rowlok->lid;?>"><?php echo $rowlok->lname;?></option>
+                    <option  <?php echo $selected;?> value="<?php echo $rowlok->lid;?>"><?php echo $rowlok->lcity;?> <?php echo $rowlok->lname;?></option>
                 <?php } ?>
         </select>
 
