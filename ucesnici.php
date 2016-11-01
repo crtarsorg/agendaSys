@@ -8,6 +8,11 @@
 	<link rel="stylesheet" href="style2.css">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.min.js"></script>
+
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.8.0/jquery.modal.min.css">
     
 
 </head>
@@ -26,8 +31,8 @@
 
 	$podaci  = json_decode($podaci);
 
-	foreach ($podaci as  $ucesnik) {
-		echo ucesnik( $ucesnik ); 
+	foreach ($podaci as $key => $ucesnik) {
+		echo ucesnik($key , $ucesnik ); 
 	}
 	
 
@@ -42,7 +47,7 @@
 <?php  
 
 
-function ucesnik($ucesnik)
+function ucesnik($index, $ucesnik)
 {
 	$link_ucesnik = "/acters/" . $ucesnik->sid;
 	$ime_ucesnika = $ucesnik->sname;
@@ -51,14 +56,19 @@ function ucesnik($ucesnik)
 	$kompanija = $ucesnik->sorg ; 
 	$pozicija = $ucesnik->stitula ; 
 
+
+	//$ucesnik->sdesc;
+	
+	$biografija = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quaerat ipsam corporis. Harum pariatur beatae delectus, porro similique accusantium quis ex earum quidem voluptates! Eveniet qui dicta necessitatibus aliquam harum.";
+
 	$stampa_ucesnika = <<<LALA
 		
 
 
-		        <div class="person">
-		            <a class="avatar" href="$link_ucesnik" title="$ime_ucesnika">
+		        <div class="person" >
+		            <a class="avatar" href="#modal$index" rel="modal:open" title="$ime_ucesnika">
 		            <span><img src="$slika_ucesnika" alt="avatar" ></span></a>
-		            <h2><a href="$link_ucesnik" title="Pogledajte profile i njihov raspored">
+		            <h2><a href="#modal$index" rel="modal:open" title="Pogledajte profile i njihov raspored">
 		             $ime_ucesnika</a></h2>
 		            <div class="event-details-role">
 		                <div class="event-details-company">$kompanija
@@ -67,6 +77,29 @@ function ucesnik($ucesnik)
 		                <div class="event-details-position">
 		                    $pozicija </div>
 		            </div>
+
+		        </div>
+
+
+		        <div class="person" id="modal$index" style="display:none;">
+		            
+		            <span><img src="$slika_ucesnika" alt="avatar" ></span>
+		            <h2>$ime_ucesnika</h2>
+		            <div class="event-details-role">
+		                <div class="event-details-company">$kompanija
+		                    <br>
+		                </div>
+		                <div class="event-details-position">
+		                    $pozicija </div>
+		            </div>
+					
+					<div id="page-me-profile-about" >
+		            	<strong>Biografija:</strong> $biografija
+
+		            	
+		            </div>
+
+					<a href="#" rel="modal:close">Close</a>
 		        </div>
 
 
@@ -79,47 +112,9 @@ LALA;
 }
 
 
-	function ucesnik1()
-	{
-		
-
-	$link = "http://google.com";
-	$ime_ucesnika = "Petar Petrovic";
-	$kompanija = "crta";
-	$pozicija = "Levo";
-	$biografija = "desno";
-
-	$temp =  <<<LALA
-
-		    <div id="page-me-profile">
-		        <span id="page-me-profile-avatar"><span><img src="$link" alt="avatar"  ></span></span>
-		        <h1 id="page-me-name">$ime_ucesnika</h1>
-		        <div id="page-me-profile-data" class="event-details-role-company">
-		            <strong>$komanija</strong>
-		            <br> $pozicija
-		            <br>
-		        </div>
-		        <div id="page-me-profile-about">
-		            <strong>Biografija:</strong> $biografija
-		            <br>
-		            <br> </div>
-		    </div>
-LALA;
-
-	return $temp ;
-	}
 
 ?>
 
-	<script>
-		$(function() {
 
-			$(".person a").click(function(ev) {
-				ev.preventDefault();
-
-				alert("asdad")
-			});
-		})
-	</script>
 </body>
 </html>
