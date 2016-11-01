@@ -989,7 +989,7 @@ transition: background-color 1s linear;}
 }
 
 
-.event-evpeople {    padding: 5px;font-size: 12px; text-decoration: none; line-height: 16px; margin-bottom: 8px; display: block; min-height: 16px;}
+.event-evpeople {    padding: 5px 2px;font-size: 12px; text-decoration: none; line-height: 16px; margin-bottom: 8px; display: block; min-height: 16px;}
 
 .popover {background:none;padding-top:10px;}
 .popover .popover-content {border:1px solid #000;position:relative;background-color: #575757;border-radius:5px;padding:2px;}
@@ -1480,7 +1480,7 @@ font-size:20px;
 }
 
 .avatar {height:100px; width:100px;border-radius: 300px;float:left;margin:0 auto;}
-.avatar img { height: 200px;width: auto;margin:0 auto; }
+.avatar img { max-height: 200px;width: auto;margin:0 auto; }
 .avatar-letter {font-size:80px;line-height:195px;font-weight:400;
     height:200px;
     border:2px solid #e6e6e6;

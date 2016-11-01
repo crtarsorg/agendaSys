@@ -32,18 +32,16 @@
     $(".event a, span.event ").on('click tap',function(ev) {
         ev.preventDefault();
 
-        var el_temp = $(this).next();
-        
-        
+        var el_temp = $(this);
 
         if(this.tagName=="A"){
 
-            el_temp = $(this).parent().parent().next() ;
+            el_temp = $(this).parent().parent();
         }
 
 
         console.log(el_temp);
-        el_temp.toggleClass('hidden', 1000);
+        el_temp.next().toggleClass('hidden', 1000);
 
     })
 </script>

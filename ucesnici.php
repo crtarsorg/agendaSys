@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Ucesnici</title>
+
+	<link rel="stylesheet" href="css/bootstrap-custom.css">
+	<link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
@@ -10,7 +13,19 @@
 <div class="container-inner container-wide">
     <div class="container-people">
 
-	<?php echo ucesnik("la"); ?>
+	<?php 
+
+	$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakers"); //speakers
+
+	$podaci  = json_decode($podaci);
+
+	foreach ($podaci as  $ucesnik) {
+		echo ucesnik( $ucesnik ); 
+
+	}
+	
+
+	?>
 
     <br style="clear:both">
     </div>
@@ -23,10 +38,11 @@
 
 function ucesnik($ucesnik)
 {
-	$link_ucesnik = "http://google.com";
-	$ime_ucesnika = "Petrovic Petar";
-	$slika_ucesnika = "";
-	$kompanija = "";
+	$link_ucesnik = "/acters/" . $ucesnik->sid;
+	$ime_ucesnika = $ucesnik->sname;
+	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
+	// $ucesnik->simg;
+	$kompanija = $ucesnik->sdesc;
 	$pozicija = "";
 
 	$stampa_ucesnika = <<<LALA
