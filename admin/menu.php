@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <HTML>
   <HEAD>
-
+    <meta charset="utf-8">
     <title>Agenda</title>
 
     <!-- Scripts -->
