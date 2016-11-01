@@ -30,29 +30,39 @@ if(preg_match('"^speakers/[0-9]+(/?)$"', $req, $matches)){
 
 
 function listAllEvents(){
-    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
-    echo json_encode($res);
+    checkCache("listAllEvents");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
+    createCache("listAllEvents",json_encode($res));
+    //echo json_encode($res);
 }
 function listSingleEvent($evtid){
-    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid WHERE eid='".$evtid."' ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
-    echo json_encode($res);
+    checkCache("listSingleEvent");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("SELECT * FROM events LEFT JOIN locations ON events.eloc=locations.lid WHERE eid='".$evtid."' ORDER BY events.edate, events.etime ASC   "),MYSQLI_ASSOC) ;
+    createCache("listSingleEvent",json_encode($res));
+    //echo json_encode($res);
 }
 function listEventSpeakers($evtid){
-    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM s2es LEFT JOIN speakers ON s2es.spkid=speakers.sid WHERE evtid='".$evtid."'  "),MYSQLI_ASSOC ) ;
-    echo json_encode($res);
+    checkCache("listEventSpeakers");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("SELECT * FROM s2es LEFT JOIN speakers ON s2es.spkid=speakers.sid WHERE evtid='".$evtid."'  "),MYSQLI_ASSOC ) ;
+    createCache("listEventSpeakers",json_encode($res));
+    //echo json_encode($res);
 }
 function listAllSpeakers(){
-    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers  "),MYSQLI_ASSOC) ;
-    echo json_encode($res);
+    checkCache("listAllSpeakers");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers  "),MYSQLI_ASSOC) ;
+    createCache("listAllSpeakers",json_encode($res));
+    //echo json_encode($res);
 }
 function listSingleSpeakerDetails($evtid){
-    include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-    $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers WHERE sid='".$evtid."'   "),MYSQLI_ASSOC) ;
-    echo json_encode($res);
+    checkCache("listSingleSpeakerDetails");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("SELECT * FROM speakers WHERE sid='".$evtid."'   "),MYSQLI_ASSOC) ;
+    createCache("listSingleSpeakerDetails",json_encode($res));
+    //echo json_encode($res);
 }
 
 
@@ -60,8 +70,39 @@ function listSingleSpeakerDetails($evtid){
 
 
 
+//HELPERS
+function createCache($call, $data){
+    $fp = fopen($call.".json", 'w');
+    fwrite($fp, $data);
+    fclose($fp);
+
+    echo $data;
+}
+
+function checkCache($call){
+    $flife=10; //seconds
+
+    if(file_exists($call.".json")){
+
+        clearstatcache();
+        $age = time()-filemtime($call.".json");
+        if($age>$flife) {
+            //go back and make query
+            return;
+        }else {
+            //serve cached file
+            echo file_get_contents($call.".json");
+            die();
+        }
+
+    } else {
+        //go back and make query
+        return;
+    }
 
 
+
+}
 
 
 
