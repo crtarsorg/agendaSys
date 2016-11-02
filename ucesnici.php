@@ -71,13 +71,13 @@ function ucesnik($index, $podaci_ucesnik)
 
 	$link_ucesnik = "/acters/" . $ucesnik->sid;
 	$ime_ucesnika = $ucesnik->sname;
-	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
+	$slika_ucesnika =  "http://program.nedeljaparlamentarizma.rs/spkimages/". $ucesnik->simg;
 
 	if( empty($ucesnik->simg) ) 
 		$slika_ucesnika = "img/2poslanici.png";
 	// $ucesnik->simg;
-	$kompanija = "organizacija";// $ucesnik->sorg ; 
-	$pozicija = "pozicija"; $ucesnik->stitula ; 
+	$kompanija =  $ucesnik->sorg ; 
+	$pozicija =  $ucesnik->stitula ; 
 
 	$lista_eventova = "";
 
