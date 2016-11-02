@@ -26,7 +26,10 @@ if(preg_match('"^speakers(/?)$"', $req, $matches)){
 if(preg_match('"^speakers/[0-9]+(/?)$"', $req, $matches)){
     listSingleSpeakerDetails(explode("/",$req)[1]);
 }
-
+//serve all speakers with their events
+if(preg_match('"^speakerswithevents(/?)$"', $req, $matches)){
+    speakersWithEvents();
+}
 
 
 function listAllEvents(){
@@ -64,7 +67,13 @@ function listSingleSpeakerDetails($evtid){
     createCache("listSingleSpeakerDetails",json_encode($res));
     //echo json_encode($res);
 }
-
+function speakersWithEvents(){
+    checkCache("speakersWithEvents");
+        include("../admin/config.php"); // ovo je namerno u svakoj funkciji
+        $res = mysqli_fetch_all($mysqli->query("  SELECT * FROM `speakers` LEFT JOIN `s2es` ON speakers.sid=s2es.spkid LEFT JOIN `events` ON s2es.evtid=events.eid  ORDER BY `speakers`.`sname` ASC  "),MYSQLI_ASSOC) ;
+    createCache("speakersWithEvents",json_encode($res));
+    //echo json_encode($res);
+}
 
 
 
