@@ -4,7 +4,7 @@
 //handle post
 //insert new event
 if($_POST['action']=="insert"){
-    $sqlins = " INSERT INTO `events` (`eid`, `ename`, `edesc`, `eldesc`, `edate`, `etime`, `eloc`, `eact`, `elink`, `epartneri`) VALUES (NULL, '".$_POST[naziv]."', '".$_POST[opis]."', '".$_POST[opislong]."', '".$_POST[date]."', '".$_POST[time]."', '".$_POST[lokacija]."', '".$_POST[act]."' , '".$_POST[elink]."', '".$_POST[epartneri]."') ";
+    $sqlins = " INSERT INTO `events` (`eid`, `ename`, `edesc`, `eldesc`, `edate`, `etime`, `eloc`, `eact`, `elink`, `epartneri`, `etip`) VALUES (NULL, '".$_POST[naziv]."', '".$_POST[opis]."', '".$_POST[opislong]."', '".$_POST[date]."', '".$_POST[time]."', '".$_POST[lokacija]."', '".$_POST[act]."' , '".$_POST[elink]."', '".$_POST[epartneri]."', '".$_POST[etip]."'  ) ";
     if (!$mysqli->query($sqlins)) { $resp =  "Error: ". $mysqli->error; } else { $resp.= "New event added. <b><u>Do NOT REFRESH page or event will be inserted again.</u></b>"; $insnewid = $mysqli->insert_id; }
 
 
@@ -67,6 +67,8 @@ while($rowspeak = $respeak->fetch_object()){
 }
 ?>
 
+        <h3>Tip dogadjaja</h3>
+        <input placeholder="Tip dogadjaja"  id="etip" name="etip" size="100" value="<?php echo  $_POST[etip];?>" maxlength="300"><br>
 
         <h3>Partneri</h3>
         <textarea class="widgEditor" placeholder="Partneri" id="epartneri" name="epartneri" rows="5" cols="100"><?php echo $_POST[epartneri];?></textarea>     <br>

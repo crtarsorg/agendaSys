@@ -48,8 +48,25 @@ var docloc = document.location.href.match(/[^\/]+$/)[0];
     if($('a[href$="'+docloc+'"]')) {
         $("#mainmenu a").removeClass("menuactive");
         $('a[href$="'+docloc+'"]').addClass("menuactive");
+    }
 
-        }
+//tip dogadjaja - select autocomplete
+        var availableEvents = [
+                    "Dan otvorenih vrata",
+                    "Debata",
+                    "Edukativna radionica",
+                    "Info sesija",
+                    "Neformalni sastanak",
+                    "Panel diskusija",
+                    "Tribina"
+                ];
+
+        $( "#etip" ).autocomplete({
+            source: availableEvents,minLength: 0
+        }).focus(function(){
+            $(this).data("ui-autocomplete").search("");
+        });
+
 
 });
 
