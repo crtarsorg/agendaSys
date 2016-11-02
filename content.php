@@ -61,6 +61,13 @@
 
             
 
+            $var_ucesnici = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakerswithevents") ; 
+            $ucesnici = json_decode( $var_ucesnici );
+
+            $temp_ucesnici = array_group_by($ucesnici,'sid');            
+
+           
+
             $temp = array_group_by($niz_podataka,'edate','etime');
 
                
@@ -93,7 +100,7 @@
                         $boja = $temp_vals[0];
                         $mesto = $temp_vals[1];
 
-                        $sadrzaj_detalji = detalji_eventa( $id_event );    
+                        $sadrzaj_detalji = detalji_eventa( $temp_ucesnici[$int_key]  );    
 
 
                         $unosi .= <<<UNOS

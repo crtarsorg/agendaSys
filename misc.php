@@ -5,7 +5,7 @@
     {
         $samo_gradovi = array_map(function ($el)
         {
-            return $el->grad;
+            return $el->lcity;
         } , $podaci);
 
         $samo_gradovi = array_unique($samo_gradovi);
@@ -14,13 +14,19 @@
     }
 
 
-    function ucesnik( $value='' )
+    function ucesnik( $user='' )
     {
 
-        $slika_ucesnika = "https://placeholdit.imgix.net/~text?txtsize=28&bg=0099ff&txtclr=ffffff&txt=Neki kul header ovde&w=320&h=320&fm=png";
-        $link_ucesnik ="http://www.google.com";
-        $ime_ucesnika = "Mario Maric";
-        $biografija = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est hic error cum quia, minus impedit voluptatibus laborum deleniti ab ipsum vitae quasi ratione, soluta tempora fugiat nostrum totam odit a!";
+        $slika_ucesnika = 
+            "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg;
+
+        if( empty( $user->simg )  )
+            $slika_ucesnika = "img/2poslanici.png";
+        $link_ucesnik ="#"; //kad bude napravljenja stranica za svakog ucesnika pojedinacno
+        $ime_ucesnika = $user->sname;
+        $biografija = "";
+        $org = $user->sorg;
+        $pozicija = $user->stitula;
 
         return <<<ORD
             <div class="ucesnik">
@@ -29,26 +35,35 @@
                 </a>
                 <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
                
-                <div class="event-details-role-bio">$biografija</div>
+               <div class="event-details-role">
+                        <div class="event-details-company">$org
+                            <br>
+                        </div>
+                        <div class="event-details-position">
+                            $pozicija </div>
+                    </div>
             </div>
 
 ORD;
     }
 
-    function detalji_eventa( $id_event )
+    function detalji_eventa( $event, $ucesnici )
     {
         //AIzaSyCIqFRtib8fmSMLKsEPzbQ5AREGUnhUTNQ
         
 
-        $opis_dogadjaja ="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est hic error cum quia, minus impedit voluptatibus laborum deleniti ab ipsum vitae quasi ratione, soluta tempora fugiat nostrum totam odit a!";
+        $opis_dogadjaja = $event->edesc;
         
-        $koordinate_mesta = "44.820517,20.427263";
+        $koordinate_mesta = $event->lcoordx . ",".$event->lcoordy;
+        if(empty($event->lcoordx ))
+            $koordinate_mesta = "44.820517,20.427263";
+
         $link_koord = str_replace(",","+", $koordinate_mesta);
 
         $korisnici = "";
 
-        for ($i=0; $i < rand(2,7) ; $i++) { 
-            $korisnici .= ucesnik();
+        for ($i=0; $i < count($ucesnici) ; $i++) { 
+            $korisnici .= ucesnik( $ucesnici[ $i ] );
         } 
 
 
