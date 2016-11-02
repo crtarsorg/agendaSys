@@ -1,5 +1,10 @@
-<?php include("menu.php");?> 
+<?php include("menu.php");?>
 <?php
+
+//properly encode POST
+foreach ($_POST as $key => $value) {
+    $_POST[$key] = mysqli_real_escape_string($mysqli,$value);
+}
 
 //handle post
 //insert new event
