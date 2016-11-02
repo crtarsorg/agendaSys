@@ -72,6 +72,9 @@ function ucesnik($index, $podaci_ucesnik)
 	$link_ucesnik = "/acters/" . $ucesnik->sid;
 	$ime_ucesnika = $ucesnik->sname;
 	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
+
+	if( empty($ucesnik->simg) ) 
+		$slika_ucesnika = "img/2poslanici.png";
 	// $ucesnik->simg;
 	$kompanija = "organizacija";// $ucesnik->sorg ; 
 	$pozicija = "pozicija"; $ucesnik->stitula ; 
@@ -111,7 +114,7 @@ function ucesnik($index, $podaci_ucesnik)
 
 		        <div class="person" id="modal$index" style="display:none;">
 		            
-		            <span><img src="$slika_ucesnika" alt="avatar" ></span>
+		            <span><img src="$slika_ucesnika" alt="avatar" style="max-width: 200px;"></span>
 		            <h2>$ime_ucesnika</h2>
 		            <div class="event-details-role">
 		                <div class="event-details-company">$kompanija
@@ -125,7 +128,7 @@ function ucesnik($index, $podaci_ucesnik)
 		            	$lista_eventova
 		            </div>
 
-					<a href="#" rel="modal:close">Close</a>
+					<a href="#" rel="modal:close" style="float:right">Close</a>
 		        </div>
 
 
