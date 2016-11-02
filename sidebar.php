@@ -8,7 +8,7 @@
             <ul>
                 <li id="sidebar-search">
                     <form  method="get">
-                        <input type="text" id="searchFi" name="s" class="" placeholder="Pretraga" style="color: rgb(204, 204, 204);"> 
+                        <input type="text" id="searchFi" name="s" class="" placeholder="Претрага" style="color: rgb(204, 204, 204);"> 
                         <!-- <input id="s-submit" type="submit" value="Search" class="button-submit" style="font-size: 10px;"> -->
                         <br style="clear:both">
 
@@ -86,7 +86,7 @@ LA;
                     foreach ($niz_event_tipova as $value) {
                         $temp_tip = tipovi_dogadjaja( $value );
                         echo <<<TIP
-                        <li class="lev1 ev_tags" id="filter-menutag-temp_tip"> <a href="#" tag="temp_tip"  title="$value"><span class="box"></span>$value</a>
+                        <li class="lev1 ev_tags" id="filter-menutag-temp_tip"> <a href="#" tag="$temp_tip"  title="$value"><span class="box"></span>$value</a>
                         </li>
 TIP;
                     }

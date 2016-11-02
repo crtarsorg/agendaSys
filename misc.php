@@ -166,17 +166,17 @@ TEMP_SADR;
               
         
          switch ($tip_dogadjaja) {
-             case "Панел дискусија": $tip = "панел дискусија";break;
-             case "Дебата": $tip = "дебата";break;
-             case "Дан отворених врата": $tip = "дан отворених врата";break;
-             case "Едукативна радионица": $tip = "едукативна радионица";break;
-             case "Неформални састанак": $tip = "неформални састанак";break;
-             case "Трибина": $tip = "трибина";break;
-             case "Симулација седнице": $tip = "симулација седнице";break;
-             case "Инфо сесија": $tip = "инфо сесија";break;
-             case "Презентација": $tip = "презентација";break;
-             case "Округли сто": $tip = "округли сто";break;
-             case "Улична акција": $tip = "улична акција";break;
+             case "Панел дискусија": $tip = "panel";break;
+             case "Дебата": $tip = "debata";break;
+             case "Дан отворених врата": $tip = "otvorena_vrata";break;
+             case "Едукативна радионица": $tip = "radionica";break;
+             case "Неформални састанак": $tip = "sastanak";break;
+             case "Трибина": $tip = "tribina";break;
+             case "Симулација седнице": $tip = "simulacija";break;
+             case "Инфо сесија": $tip = "sesija";break;
+             case "Презентација": $tip = "prezentacija";break;
+             case "Округли сто": $tip = "sto";break;
+             case "Улична акција": $tip = "akcija";break;
 
              
             default:
