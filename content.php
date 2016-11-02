@@ -100,7 +100,7 @@
                         $boja = $temp_vals[0];
                         $mesto = $temp_vals[1];
 
-                        $sadrzaj_detalji = detalji_eventa( $temp_ucesnici[$int_key]  );    
+                        $sadrzaj_detalji = detalji_eventa( $value, $temp_ucesnici[$value->eid]  );    
 
 
                         $unosi .= <<<UNOS

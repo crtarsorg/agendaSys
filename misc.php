@@ -17,6 +17,9 @@
     function ucesnik( $user='' )
     {
 
+               
+        
+
         $slika_ucesnika = 
             "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg;
 
@@ -61,6 +64,7 @@ ORD;
         $link_koord = str_replace(",","+", $koordinate_mesta);
 
         $korisnici = "";
+        
 
         for ($i=0; $i < count($ucesnici) ; $i++) { 
             $korisnici .= ucesnik( $ucesnici[ $i ] );
