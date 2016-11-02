@@ -69,10 +69,7 @@
             $temp_ucesnici = array_group_by($ucesnici,'sid');            
                   
               
-             print_r("<pre>");
-                    var_dump( $temp_ucesnici  );
-                    print_r("</pre>");
-                    die();
+          
 
             $temp = array_group_by($niz_podataka,'edate','etime');
 

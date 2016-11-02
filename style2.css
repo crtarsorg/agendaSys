@@ -44,7 +44,7 @@ left:0;
 position:relative;
 transition:all .1s linear;}
 #page-me-profile-avatar img,.tooltip-friend span {border-radius: 100px;}
-.avatar img { height: 75px;width: auto;margin:0 auto;border:2px solid rgba(0,0,0,.1);border-radius:300px;}
+.avatar img { height: 100px;width: auto;margin:0 auto;border:2px solid rgba(0,0,0,.1);border-radius:300px;}
 .avatar:hover {text-decoration:none !important;top:-2px;transition:all .1s linear;}
 .avatar-letter {font-style:normal;-webkit-text-stroke: 6px rgba(255,255,255,0.05);text-shadow: rgba(245,245,255,0.35) 0 0px 0px,rgba(0,0,30,0.1) 0px 0.04em 0;-webkit-background-clip: text;font-weight:700;font-size:35px;text-align:center;line-height:68px;text-transform:uppercase;}
 #page-me-connections .avatar, #sidebar .avatar, #header-menu .avatar, #header-profile-menu .avatar, .tooltip-friend span { height: 50px; width: 50px;overflow:hidden;display:block; float:left;}
