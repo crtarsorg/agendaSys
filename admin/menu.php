@@ -52,13 +52,13 @@ var docloc = document.location.href.match(/[^\/]+$/)[0];
 
 //tip dogadjaja - select autocomplete
         var availableEvents = [
-                    "Dan otvorenih vrata",
-                    "Debata",
-                    "Edukativna radionica",
-                    "Info sesija",
-                    "Neformalni sastanak",
-                    "Panel diskusija",
-                    "Tribina"
+                    "Дан отворених врата",
+                    "Дебата",
+                    "Едукативна радионица",
+                    "Инфо сесија",
+                    "Неформални састанак",
+                    "Панел дискусија",
+                    "Трибина" 
                 ];
 
         $( "#etip" ).autocomplete({
