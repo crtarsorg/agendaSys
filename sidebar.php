@@ -2,7 +2,7 @@
 
 
 
-<div id="sidebar-inner">
+
     <div id="sidebar-filters" class="sidebar-section vevent" itemscope="" itemtype="http://schema.org/Event">
         <div id="sidebar-filters-type">
             <ul>
@@ -90,7 +90,7 @@ LA;
         </div>
     </div>
     <hr>
-</div>
+
 
 
 

@@ -35,34 +35,21 @@
                         <ul>
                             <li id="menu-link-schedule" class="menu-link">
                                 
-                                    <a href="/" class="menu-link-active">Raspored</a>
+                                    <a href="#" class="menu-link-active">Raspored</a>
                                     
                                 
                             </li>
                             <li id="menu-speakers" class="menu-link"><a href="ucesnici.php" class="">Ucesnici</a></li>
                             
+
+
                             <li class="menu-link" id="menu-search">
-                                <div class="dropdown">
-                                    <a id="header-menu-myprofile-link" class="dropdown-toggle" data-toggle="dropdown" href="/search" onclick="event.preventDefault()">Search</a>
-                                    <div class="popover dropdown-menu" role="menu" aria-labelledby="header-menu-myprofile-link">
-                                        <div class="popover-content">
-                                            <div class="arrow"><span></span></div>
-                                            <div class="popover-body">
-                                                <div class="popover-body-inner">
-                                                    <div id="sidebar-filters" class="sidebar-section vevent" itemscope="" itemtype="http://schema.org/Event">
-                                                        <div id="sidebar-filters-type">
-                                                           <script type="text/javascript">
-                                                               $( "#sidebar-filters-type" ).load( "lista.html");
-                                                           </script>
-                                                        </div>
-                                                    </div>
-                                                    <br class="s-clr">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                <script type="text/javascript">
+                                   $( "#menu-search" ).load( "lista.php");
+                               </script>
                             </li>
+
+
                             <li class="share">
                                 
                                     <a style="border: none;" href="https://www.facebook.com/sharer/sharer.php?display=popup&ref=plugin&src=like&u="
@@ -90,8 +77,11 @@
                     </div>
                     <div id="sidebar-outer">
                         <div id="sidebar" class="col-md-3">
+                            <div id="sidebar-inner">
+
+                            </div>
                            <script type="text/javascript">
-                               $("#sidebar").load("sidebar.php")
+                               $("#sidebar-inner").load("sidebar.php")
                            </script>
                         </div>
                     </div>

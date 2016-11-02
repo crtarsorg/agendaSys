@@ -53,8 +53,8 @@ function ucesnik($index, $ucesnik)
 	$ime_ucesnika = $ucesnik->sname;
 	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
 	// $ucesnik->simg;
-	$kompanija = $ucesnik->sorg ; 
-	$pozicija = $ucesnik->stitula ; 
+	$kompanija = "organizacija";// $ucesnik->sorg ; 
+	$pozicija = "pozicija"; $ucesnik->stitula ; 
 
 
 	//$ucesnik->sdesc;
@@ -94,7 +94,7 @@ function ucesnik($index, $ucesnik)
 		            </div>
 					
 					<div id="page-me-profile-about" >
-		            	<strong>Biografija:</strong> $biografija
+		            	dogadjaji na kojima ucestvuje
 
 		            	
 		            </div>
