@@ -126,11 +126,11 @@ UNOS;
                     } // end of unos; value
 
                   
-
+                    $vreme =  substr($int_key,0,-3);
 
                     $jedan_period = <<<PERIOD
                         <div class="jedan_period">
-                            <h3>$int_key</h3>
+                            <h3>$vreme</h3>
                             <div class="container">
                                 <div class="container-inner">
                                     $unosi  
