@@ -1,4 +1,4 @@
-<?php include("config.php")?>
+<?php include("config.php");?>
 <!DOCTYPE html>
 <HTML>
   <HEAD>
@@ -58,7 +58,7 @@ var docloc = document.location.href.match(/[^\/]+$/)[0];
                     "Инфо сесија",
                     "Неформални састанак",
                     "Панел дискусија",
-                    "Трибина" 
+                    "Трибина"
                 ];
 
         $( "#etip" ).autocomplete({

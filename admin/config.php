@@ -5,5 +5,5 @@ $username_mysqlcon = "root";
 $password_mysqlcon = "root";
 
 $mysqli = new mysqli($hostname_mysqlcon, $username_mysqlcon, $password_mysqlcon,$database_mysqlcon);
-$mysqli->set_charset("utf8");
+$mysqli->set_charset("utf8"); 
 ?>

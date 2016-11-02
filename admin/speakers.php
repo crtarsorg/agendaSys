@@ -1,4 +1,4 @@
-<?php include("menu.php")?>
+<?php include("menu.php");?>
 <?php
 //handle post
 if($_SERVER['SERVER_NAME']=="127.0.0.1") {$uplpath="../spkimages/";$imgpath="../spkimages/";}else {$uplpath="../../program.nedeljaparlamentarizma.rs/spkimages/";$imgpath="http://program.nedeljaparlamentarizma.rs/spkimages/";}

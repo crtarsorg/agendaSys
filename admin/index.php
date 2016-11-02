@@ -1,4 +1,4 @@
-<?php include("menu.php")?>
+<?php include("menu.php");?>
 <div id="cont">
 
 <h2>Index</h2>
