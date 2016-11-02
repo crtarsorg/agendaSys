@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Ucesnici</title>
+	<title>Učesnici Nedelje parlamentarizma</title>
 
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
 	<link rel="stylesheet" href="style2.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -19,6 +20,13 @@
 <body>
 
 
+	<?php 
+
+        $active_link = "ucesnici"; 
+        include 'menu.php';
+
+    ?>
+
 <div class="container-inner container-wide">
     <div class="container-people">
 
@@ -29,8 +37,7 @@
 	//da se otvara popup sa njegovim detaljima
 
 	$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakerswithevents"); //speakers
-	/*$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakersWithEvents"); //speakers
-*/
+	
 	$podaci  = json_decode($podaci);
 
 	$podaci  = array_group_by($podaci,'sid');
