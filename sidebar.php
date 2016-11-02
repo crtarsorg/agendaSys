@@ -77,12 +77,26 @@ LA;
 
                 <li style="clear:left"></li>
 
+                <?php                      
+
+                    $niz_event_tipova = tipovi( $niz_podataka  );
+
+                    foreach ($niz_event_tipova as $value) {
+                        $temp_tip = tipovi_dogadjaja( $value );
+                        echo <<<TIP
+                        <li class="lev1 ev_tags" id="filter-menutag-temp_tip"> <a href="#" tag="temp_tip"  title="$value"><span class="box"></span>$value</a>
+                        </li>
+TIP;
+                    }
+
+                ?>
+
                 <li class="lev1 ev_tags" id="filter-menutag-company"> <a href="#" tag="sto"  title="Okrugli sto"><span class="box"></span>Okrugli sto</a>
                 </li>
-
+                
                 <li class="lev1 ev_tags" id="filter-menutag-audience"><a href="#" tag="radionica"  title="Radionica"><span class="box"></span>Radionica</a>
                 </li>
-
+                
                 <li class="lev1 ev_tags" id="filter-menutag-subject"><a href="#" tag="debata"  title="Debata"><span class="box"></span>Debata</a>
                 </li>
 

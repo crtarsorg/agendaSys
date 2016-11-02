@@ -133,4 +133,42 @@ TEMP_SADR;
 
     }
 
+
+
+    function tipovi_dogadjaja($tip_dogadjaja='')
+    {
+         switch ($tip_dogadjaja) {
+            case "Dan otvorenih vrata":  $tip = "dan_otvorenih_vrata";
+            case "Debata":  $tip = "debata";
+            case "Edukativna radionica":  $tip = "edukativna_radionica";
+            case "Info sesija":  $tip = "info_sesija";
+            case "Neformalni sastanak":  $tip = "neformalni_sastanak";
+            case "Okrugli sto":  $tip = "okrugli_sto";
+            case "Panel diskusija":  $tip = "panel_diskusija";
+            case "Prezentacija":  $tip = "prezentacija";
+            case "Simulacija sednice":  $tip = "simulacija_sednice";
+            case "Tribina":  $tip = "tribina";
+            case "Ulicna akcija":  $tip = "ulicna_akcija";
+             
+            default:
+                    # code...
+                    break;
+        }   
+
+        return $tip_dogadjaja;
+    }
+
+
+    function tipovi( $niz ='' )
+    {
+        $tipovi = array_map(function ($el)
+        {
+            return $el->etip;
+        } , $niz);
+
+        $tipovi = array_unique($tipovi);
+
+        return $tipovi;  
+    }
+
 ?>
