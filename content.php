@@ -56,12 +56,12 @@
 
             $ceo_tekst = "";
 
-            $var_podaci = file_get_contents("data.json") ;                   
+            $var_podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/events") ;                   
             $niz_podataka = json_decode($var_podaci);
 
             
 
-            $temp = array_group_by($niz_podataka,'datum','pocetak');
+            $temp = array_group_by($niz_podataka,'edate','etime');
 
                
             //XXX ovo radi kad su dani jednog meseca u pitanju    
@@ -86,9 +86,9 @@
                        
                         $unosi = "";
                         foreach ($interval_value as  $value) {
-                            $id = md5($value->naziv);
+                            $id = md5($value->ename);
 
-                        $temp_vals = boja_i_grad( $value->grad );    
+                        $temp_vals = boja_i_grad( $value->lcity );    
 
                         $boja = $temp_vals[0];
                         $mesto = $temp_vals[1];
@@ -97,8 +97,8 @@
 
 
                         $unosi .= <<<UNOS
-                            <span class="event $boja" mesto='$mesto' tag='{$value->tip}'>
-                                <a href="{$value->link}" class="name" id="$id">{$value->naziv}<span class="vs">{$value->mesto}</span><span class="event-evpeople">{$value->opis}</span></a>
+                            <span class="event $boja" mesto='$mesto' tag='{$value->etip}'>
+                                <a href="{$value->elink}" class="name" id="$id">{$value->ename}<span class="vs">{$value->lcity}</span><span class="event-evpeople">{$value->epartneri}</span></a>
                             </span> 
                             
                             <div class="hidden">
