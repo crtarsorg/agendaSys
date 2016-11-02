@@ -70,7 +70,7 @@ function listSingleSpeakerDetails($evtid){
 function speakersWithEvents(){
     checkCache("speakersWithEvents");
         include("../admin/config.php"); // ovo je namerno u svakoj funkciji
-        $res = mysqli_fetch_all($mysqli->query("  SELECT * FROM `speakers` LEFT JOIN `s2es` ON speakers.sid=s2es.spkid LEFT JOIN `events` ON s2es.evtid=events.eid  ORDER BY `speakers`.`sname` ASC  "),MYSQLI_ASSOC) ;
+        $res = mysqli_fetch_all($mysqli->query("  SELECT speakers.*,events.eid,events.ename FROM `speakers` LEFT JOIN `s2es` ON speakers.sid=s2es.spkid LEFT JOIN `events` ON s2es.evtid=events.eid ORDER BY `speakers`.`sname` ASC  "),MYSQLI_ASSOC) ;
     createCache("speakersWithEvents",json_encode($res));
     //echo json_encode($res);
 }
