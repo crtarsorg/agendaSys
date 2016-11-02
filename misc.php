@@ -131,14 +131,17 @@ TEMP_SADR;
 
         $temp_vals =  array( );
 
-        switch ($grad_val) {
-            case "Beograd": $boja = 'boja1'; $mesto="beograd";  break;
-            case "Nis": $boja = 'boja2'; $mesto="nis"; break;
-            case "Subotica": $boja = 'boja3'; $mesto="subotica"; break;
-            case "Novi Sad": $boja = 'boja4'; $mesto="novi_sad"; break;
-            case "Uzice": $boja = 'boja5'; $mesto="uzice"; break;
-            case "Prijepolje": $boja = 'boja6'; $mesto="prijepolje"; break;
-            case "Leskovac": $boja = 'boja7'; $mesto="leskovac"; break;
+        switch ( trim($grad_val)) {
+            case "Београд":$boja = 'boja1';$mesto="beograd";break;
+            case "Ниш":$boja = 'boja2';$mesto="nis";break;
+            case "Панчево":$boja = 'boja3';$mesto="pancevo";break;
+            case "Азања":$boja = 'boja4';$mesto="azanja";break;
+            case "Рашка":$boja = 'boja5';$mesto="raska";break;
+            case "Бујановац":$boja = 'boja6';$mesto="bujanovac";break;
+            case "Зрењанин":$boja = 'boja7';$mesto="zrenjanin";break;
+            case "Трстеник":$boja = 'boja8';$mesto="trstenik";break;
+            case "Пожаревац":$boja = 'boja9';$mesto="pozarevac";break;
+            case "Кикинда":$boja = 'boja10';$mesto="kikinda";break;
              
             default:
                     # code...
@@ -157,17 +160,18 @@ TEMP_SADR;
     function tipovi_dogadjaja($tip_dogadjaja='')
     {
          switch ($tip_dogadjaja) {
-            case "Dan otvorenih vrata":  $tip = "dan_otvorenih_vrata";
-            case "Debata":  $tip = "debata";
-            case "Edukativna radionica":  $tip = "edukativna_radionica";
-            case "Info sesija":  $tip = "info_sesija";
-            case "Neformalni sastanak":  $tip = "neformalni_sastanak";
-            case "Okrugli sto":  $tip = "okrugli_sto";
-            case "Panel diskusija":  $tip = "panel_diskusija";
-            case "Prezentacija":  $tip = "prezentacija";
-            case "Simulacija sednice":  $tip = "simulacija_sednice";
-            case "Tribina":  $tip = "tribina";
-            case "Ulicna akcija":  $tip = "ulicna_akcija";
+             case "Панел дискусија": $tip = "панел дискусија";break;
+             case "Дебата": $tip = "дебата";break;
+             case "Дан отворених врата": $tip = "дан отворених врата";break;
+             case "Едукативна радионица": $tip = "едукативна радионица";break;
+             case "Неформални састанак": $tip = "неформални састанак";break;
+             case "Трибина": $tip = "трибина";break;
+             case "Симулација седнице": $tip = "симулација седнице";break;
+             case "Инфо сесија": $tip = "инфо сесија";break;
+             case "Презентација": $tip = "презентација";break;
+             case "Округли сто": $tip = "округли сто";break;
+             case "Улична акција": $tip = "улична акција";break;
+
              
             default:
                     # code...
