@@ -5,6 +5,10 @@
 //var_dump($_POST);
 //echo "</pre>";
 
+//properly encode POST
+foreach ($_POST as $key => $value) {
+    $_POST[$key] = mysqli_real_escape_string($mysqli,$value);
+}
 
 //handle post
 //update existing
@@ -38,6 +42,13 @@ if($_POST['action']=="update"){
 $res = $mysqli->query("SELECT * FROM events WHERE eid='".$_GET[eid]."'  ") ;
 
 while($row = $res->fetch_object()){
+
+foreach ($row as $key => $value) {
+    $row->$key = htmlentities($value);
+}
+
+
+
 ?>
     <form action="eventedit.php?eid=<?php echo $row->eid;?>" method="POST" enctype="multipart/form-data">
         <input id="action" type="hidden" name="action" value="update">
