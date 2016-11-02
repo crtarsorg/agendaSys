@@ -22,7 +22,9 @@
 .boja17{background-color: #9E9893 ; } 
 .boja18{background-color: #4E777F ; } 
 .boja19{background-color: #626262 ; } 
-
+.ucesnik{
+        margin: 15px 0;
+}
 
 </style>
 
@@ -64,12 +66,15 @@
             $var_ucesnici = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakerswithevents") ; 
             $ucesnici = json_decode( $var_ucesnici );
 
-
+            //vrati samo one kojima eid nije null
+            $not_null_ucesnici = array_filter($ucesnici, function ($el){
+                return !empty($el->eid);
+            });
                
-            $temp_ucesnici = array_group_by($ucesnici,'sid');            
-                  
-              
-          
+
+                     
+               
+            $temp_ucesnici = array_group_by($not_null_ucesnici,'eid');    
 
             $temp = array_group_by($niz_podataka,'edate','etime');
 

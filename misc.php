@@ -36,15 +36,18 @@
                 <a  href="$link_ucesnik">
                     <img class="avatar" src="$slika_ucesnika" alt="avatar">                            
                 </a>
-                <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
+                <div>
+                    <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
                
-               <div class="event-details-role">
+                    <div class="event-details-role">
                         <div class="event-details-company">$org
                             <br>
                         </div>
                         <div class="event-details-position">
                             $pozicija </div>
                     </div>
+
+                </div>
             </div>
 
 ORD;
