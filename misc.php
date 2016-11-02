@@ -5,7 +5,7 @@
     {
         $samo_gradovi = array_map(function ($el)
         {
-            return $el->lcity;
+            return trim($el->lcity);
         } , $podaci);
 
         $samo_gradovi = array_unique($samo_gradovi);
@@ -159,6 +159,9 @@ TEMP_SADR;
 
     function tipovi_dogadjaja($tip_dogadjaja='')
     {
+
+              
+        
          switch ($tip_dogadjaja) {
              case "Панел дискусија": $tip = "панел дискусија";break;
              case "Дебата": $tip = "дебата";break;
