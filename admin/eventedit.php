@@ -1,5 +1,5 @@
 <?php include("menu.php")?>
-<?php 
+<?php
 
 //echo "<pre>";
 //var_dump($_POST);
@@ -7,7 +7,7 @@
 
 //properly encode POST
 foreach ($_POST as $key => $value) {
-    $_POST[$key] = mysqli_real_escape_string($mysqli,$value);
+    if(!is_array($_POST[$key])){$_POST[$key] = mysqli_real_escape_string($mysqli,$value);}
 }
 
 //handle post
@@ -44,7 +44,7 @@ $res = $mysqli->query("SELECT * FROM events WHERE eid='".$_GET[eid]."'  ") ;
 while($row = $res->fetch_object()){
 
 foreach ($row as $key => $value) {
-    $row->$key = htmlentities($value);
+    if(!is_array($row->$key)){$row->$key = htmlentities($value);}
 }
 
 
