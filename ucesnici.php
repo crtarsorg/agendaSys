@@ -24,15 +24,21 @@
 
 	<?php 
 
+	include_once 'misc/array_group_by.php';
 	//kada se klikne na jednog
 	//da se otvara popup sa njegovim detaljima
 
-	$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakers"); //speakers
-
+	$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakerswithevents"); //speakers
+	/*$podaci = file_get_contents("http://program.nedeljaparlamentarizma.rs/api/speakersWithEvents"); //speakers
+*/
 	$podaci  = json_decode($podaci);
 
-	foreach ($podaci as $key => $ucesnik) {
-		echo ucesnik($key , $ucesnik ); 
+	$podaci  = array_group_by($podaci,'sid');
+	
+
+	foreach ($podaci as $key => $za_ucesnika) { //key <=> id ucesnika, 
+		
+		echo ucesnik($key , $za_ucesnika ); 
 	}
 	
 
@@ -47,8 +53,15 @@
 <?php  
 
 
-function ucesnik($index, $ucesnik)
+function ucesnik($index, $podaci_ucesnik)
 {
+	$ucesnik = new stdClass();
+
+	if(count($podaci_ucesnik) >= 1)
+		$ucesnik = $podaci_ucesnik[0];
+	else 
+		return "";
+
 	$link_ucesnik = "/acters/" . $ucesnik->sid;
 	$ime_ucesnika = $ucesnik->sname;
 	$slika_ucesnika = "http://lorempixel.com/g/300/300/people";
@@ -56,10 +69,18 @@ function ucesnik($index, $ucesnik)
 	$kompanija = "organizacija";// $ucesnik->sorg ; 
 	$pozicija = "pozicija"; $ucesnik->stitula ; 
 
+	$lista_eventova = "";
+
+	foreach ($podaci_ucesnik as $value) {
+		$id_event = $value->eid;
+		$name_event = $value->ename;	
+		$lista_eventova .= "<a href='events/$id_event'>$name_event</a> <br/>";
+	}
+
 
 	//$ucesnik->sdesc;
 	
-	$biografija = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quaerat ipsam corporis. Harum pariatur beatae delectus, porro similique accusantium quis ex earum quidem voluptates! Eveniet qui dicta necessitatibus aliquam harum.";
+	$biografija = "some description ";/*"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad quaerat ipsam corporis. Harum pariatur beatae delectus, porro similique accusantium quis ex earum quidem voluptates! Eveniet qui dicta necessitatibus aliquam harum.";*/
 
 	$stampa_ucesnika = <<<LALA
 		
@@ -94,9 +115,7 @@ function ucesnik($index, $ucesnik)
 		            </div>
 					
 					<div id="page-me-profile-about" >
-		            	dogadjaji na kojima ucestvuje
-
-		            	
+		            	$lista_eventova
 		            </div>
 
 					<a href="#" rel="modal:close">Close</a>
