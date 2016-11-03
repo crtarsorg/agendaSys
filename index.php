@@ -10,7 +10,10 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta property="og:title" content="Програм Недеље парламентаризма"/>
     <meta property="og:type" content="article"/>
-    <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/><meta property="og:site_name" content="Nedelja Parlamentarizma"/><meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
+    <meta property="og:description" content="Погледајте догађаје партнерских организација које су планиране током друге недеље парламентаризма">
+    <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/>
+    <meta property="og:site_name" content="Nedelja Parlamentarizma"/>
+    <meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
 
     
     <title>Програм Недеље парламентаризма</title>
