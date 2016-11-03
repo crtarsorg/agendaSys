@@ -18,11 +18,11 @@ else if($active_link =="ucesnici"  ){
 <div id="container-header-menu">
       <ul>
           <li id="menu-link-schedule" class="menu-link">              
-                  <a href="index.php" class="<?php echo $raspored; ?>">Raspored</a>
+                  <a href="index.php" class="<?php echo $raspored; ?>">Распоред</a>
                   
               
           </li>
-          <li id="menu-speakers" class="<?php echo $ucesnici; ?>"><a href="ucesnici.php" class="">Učesnici</a></li>
+          <li id="menu-speakers" class="<?php echo $ucesnici; ?>"><a href="ucesnici.php" class="">Учесници</a></li>
           
 
 
