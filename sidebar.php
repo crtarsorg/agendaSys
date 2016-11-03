@@ -19,7 +19,7 @@
                 <li class="ev_tags" id="sidebar-filters-dates">
                     <a class="url" href="/">
                        <!--  <span style="overflow:hidden;text-indent:-5000px" class="box summary">Opis</span> -->
-                        <span class="dtstart">Новембар  7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend"> 13, 2016<span class="value-title" title="2016-11-13"></span></span>
+                        <span class="dtstart"> 7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend"> 13 новембар 2016<span class="value-title" title="2016-11-13"></span></span>
                     </a>
                     <div class="popover">
                         <div class="popover-content">
@@ -93,14 +93,7 @@ TIP;
 
                 ?>
 
-               <!--  <li class="lev1 ev_tags" id="filter-menutag-company"> <a href="#" tag="sto"  title="Okrugli sto"><span class="box"></span>Okrugli sto</a>
-               </li>
-               
-               <li class="lev1 ev_tags" id="filter-menutag-audience"><a href="#" tag="radionica"  title="Radionica"><span class="box"></span>Radionica</a>
-               </li>
-               
-               <li class="lev1 ev_tags" id="filter-menutag-subject"><a href="#" tag="debata"  title="Debata"><span class="box"></span>Debata</a>
-               </li> -->
+           
 
             </ul>
         </div>
