@@ -98,7 +98,7 @@ ORD;
                     
                     <hr style="clear:both">
 
-                    <strong>Учесници</strong>
+                    <strong>Говорници</strong>
                     
                     $korisnici    
 

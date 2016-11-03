@@ -22,7 +22,7 @@ else if($active_link =="ucesnici"  ){
                   
               
           </li>
-          <li id="menu-speakers" class="<?php echo $ucesnici; ?>"><a href="ucesnici.php" class="">Учесници</a></li>
+          <li id="menu-speakers" class="<?php echo $ucesnici; ?>"><a href="ucesnici.php" class="">Говорници</a></li>
           
 
 

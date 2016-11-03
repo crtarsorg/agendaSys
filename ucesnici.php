@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Учесници Недеље парламентаризма</title>
+	<title>Говорници Недеље парламентаризма</title>
 	<meta property="og:title" content="Програм Недеље парламентаризма"/>
     <meta property="og:type" content="article"/>
     <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/><meta property="og:site_name" content="Nedelja Parlamentarizma"/><meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
