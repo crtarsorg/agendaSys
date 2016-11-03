@@ -33,7 +33,7 @@ if($_POST['action']=="insert"){
     <form action="eventadd.php" method="POST" enctype="multipart/form-data">
         <input id="action" type="hidden" name="action" value="insert">
         <input placeholder="Naziv"  id="naziv" name="naziv" size="100" value="<?php echo $_POST[naziv];?>" maxlength="200"><br>
-        <input placeholder="Kratak opis" id="opis" name="opis" size="100" value="<?php echo $_POST[opis];?>" maxlength="200">        <br>
+        <!--<input placeholder="Kratak opis" id="opis" name="opis" size="100" value="<?php echo $_POST[opis];?>" maxlength="200">        <br>  -->
         <textarea class="widgEditor" placeholder="Opis dogadjaja" id="opislong" name="opislong" rows="5" cols="100"><?php echo $_POST[opislong];?></textarea>     <br>
 
 
