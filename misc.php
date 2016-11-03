@@ -58,7 +58,7 @@ ORD;
         //AIzaSyCIqFRtib8fmSMLKsEPzbQ5AREGUnhUTNQ
         
 
-        $opis_dogadjaja = $event->edesc;
+        $opis_dogadjaja = $event->eldesc;
         
         $koordinate_mesta = $event->lcoordx . ",".$event->lcoordy;
         if(empty($event->lcoordx ))
@@ -97,7 +97,7 @@ ORD;
                     
                     <hr style="clear:both">
 
-                    <strong>Učesnici</strong>
+                    <strong>Учесници</strong>
                     
                     $korisnici    
 
