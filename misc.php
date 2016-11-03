@@ -21,7 +21,7 @@
         
 
         $slika_ucesnika = 
-            "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg . "?12";
+            "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg . "?1";
 
         if( empty( $user->simg )  )
             $slika_ucesnika = "img/2poslanici.png";
