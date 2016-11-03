@@ -14,7 +14,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/><meta property="og:site_name" content="Nedelja Parlamentarizma"/><meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
 
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
-	<link rel="stylesheet" href="style2.css?7">
+	<link rel="stylesheet" href="style2.css?8">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -106,7 +106,7 @@ function ucesnik($index, $podaci_ucesnik)
 	foreach ($podaci_ucesnik as $value) {
 		$id_event = $value->eid;
 		$name_event = $value->ename;	
-		$lista_eventova .= "<a href='events/$id_event'>$name_event</a> <br/>";
+		$lista_eventova .= "<a href='#$id_event'>$name_event</a> <br/>";
 	}
 
 
