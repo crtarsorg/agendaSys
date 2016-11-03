@@ -18,7 +18,7 @@ a:hover {  text-decoration: underline; }
 /* font sizes for everything */
 #main-one h1 {font-size: 20px;font-weight:700}
 #main-one #logo h1 a {font-size:40px;}
-#main-one h2 {font-size:16px;font-weight:700;text-align: right;max-width: 300px;}
+#main-one h2 {font-size:16px;font-weight:700;    margin-left: 150px ;max-width: 300px;}
 #main-one h3 {font-size:12px;}
 #main-one h4 {font-size:14px;}
 
@@ -1474,7 +1474,7 @@ padding:0;
 .event-details-role {
 font-size:14px;
 max-width: 350px;
-text-align: right;
+margin-left: 150px;
 }
 
 .person h2 a{
