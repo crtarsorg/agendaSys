@@ -23,7 +23,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     <link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap-custom.css">
    
     <link href="//fonts.googleapis.com/css?family=Lato:400,700,900,400italic,700italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="style2.css?8">
+    <link rel="stylesheet" type="text/css" href="style2.css?9">
     <link href="data:;base64,iVBORw0KGgo=" type="image/png">
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     
