@@ -430,7 +430,7 @@ height:37px;
 .avatar-bio {}
 
 .event-details span.box { clear: left; margin: 0 5px 0 0; }
-.tip-description {margin-bottom:10px;}
+.tip-description {margin-bottom:10px; text-align: justify; }
 #tip .scrollable-details {max-height:260px;overflow:auto;}
 .tip-description li { margin:0 0 5px 15px;list-style:disc; }
 .tip-description li:last-child { margin-bottom: 0 }
