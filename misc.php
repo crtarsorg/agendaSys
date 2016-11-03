@@ -33,10 +33,11 @@
 
         return <<<ORD
             <div class="ucesnik">
-                <a  href="$link_ucesnik"> </a>
-                <img class="avatar" src="$slika_ucesnika" alt="avatar">                            
+                <a  href="$link_ucesnik"> 
+                    <img class="avatar" src="$slika_ucesnika" alt="avatar">         
+                </a>                   
                
-                <div>
+                <div style='height: 110px;'>
                     <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
                
                     <div class="event-details-role">
