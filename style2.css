@@ -31,7 +31,7 @@ a:hover {  text-decoration: underline; }
 .menu-link-me-avatar .avatar-letter,#page-me #content h2{font-size:20px;line-height:32px;}
 
 .person {min-width:250px;width:48%;float:left;position:relative;border-radius: 4px;margin:0 10px 10px 0;padding: 2px;}
-.person h2 {margin:8px 0 3px;}
+.person h2 {margin:8px 0 3px;    margin-left: 150px;     text-align: left;}
 
 #page-list .person, #page-event .person{width:98%;}
 #page-list .container {border-bottom:2px solid rgba(0,0,0,.1);padding-top:10px;}
