@@ -14,7 +14,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/><meta property="og:site_name" content="Nedelja Parlamentarizma"/><meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
 
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
-	<link rel="stylesheet" href="style2.css?9">
+	<link rel="stylesheet" href="style2.css?20">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -93,7 +93,7 @@ function ucesnik($index, $podaci_ucesnik)
 
 	$link_ucesnik = "/acters/" . $ucesnik->sid;
 	$ime_ucesnika = $ucesnik->sname;
-	$slika_ucesnika =  "http://program.nedeljaparlamentarizma.rs/spkimages/". $ucesnik->simg;
+	$slika_ucesnika =  "http://program.nedeljaparlamentarizma.rs/spkimages/". $ucesnik->simg . "?20";
 
 	if( empty($ucesnik->simg) ) 
 		$slika_ucesnika = "img/2poslanici.png";
