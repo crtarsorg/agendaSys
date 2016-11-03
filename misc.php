@@ -33,9 +33,9 @@
 
         return <<<ORD
             <div class="ucesnik">
-                <a  href="$link_ucesnik">
-                    <img class="avatar" src="$slika_ucesnika" alt="avatar">                            
-                </a>
+                <a  href="$link_ucesnik"> </a>
+                <img class="avatar" src="$slika_ucesnika" alt="avatar">                            
+               
                 <div>
                     <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
                
