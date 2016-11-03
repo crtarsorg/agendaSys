@@ -72,7 +72,7 @@
             });
                
 
-                     
+            $not_null_ucesnici = array_reverse($not_null_ucesnici);         
                
             $temp_ucesnici = array_group_by($not_null_ucesnici,'eid');    
 
