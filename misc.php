@@ -17,11 +17,8 @@
     function ucesnik( $user='' )
     {
 
-               
-        
-
         $slika_ucesnika = 
-            "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg . "?1";
+            "http://program.nedeljaparlamentarizma.rs/spkimages/". $user->simg . "?20";
 
         if( empty( $user->simg )  )
             $slika_ucesnika = "img/2poslanici.png";
