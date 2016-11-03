@@ -12,14 +12,14 @@
                         <!-- <input id="s-submit" type="submit" value="Search" class="button-submit" style="font-size: 10px;"> -->
                         <br style="clear:both">
 
-                        <button id="btnPretraga" type="button">Pretraga</button>
-                        <button id="btnReset" type="button">Reset</button>
+                        <button id="btnPretraga" type="button">Претрага</button>
+                        <button id="btnReset" type="button">Ресет</button>
                     </form>
                 </li>
                 <li class="ev_tags" id="sidebar-filters-dates">
                     <a class="url" href="/">
                        <!--  <span style="overflow:hidden;text-indent:-5000px" class="box summary">Opis</span> -->
-                        <span class="dtstart">Novembar  7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend"> 13, 2016<span class="value-title" title="2016-11-13"></span></span>
+                        <span class="dtstart">Новембар  7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend"> 13, 2016<span class="value-title" title="2016-11-13"></span></span>
                     </a>
                     <div class="popover">
                         <div class="popover-content">
@@ -27,13 +27,13 @@
                             <div class="popover-body">
                                 <div class="popover-body-inner datumi">
                                     <ul>
-                                        <li><a href="#" date="2016-11-07"><b>Ponedeljak</b>, 7. novembar</a></li>
-                                        <li><a href="#" date="2016-11-08"><b>Utorak</b>, 8. novembar</a></li>
-                                        <li><a href="#" date="2016-11-09"><b>Sreda</b>, 9. novembar</a></li>
-                                        <li><a href="#" date="2016-11-10"><b>Četvrtak</b>, 10. novembar</a></li>
-                                        <li><a href="#" date="2016-11-11"><b>Petak</b>, 11. novembar</a></li>
-                                        <li><a href="#" date="2016-11-12"><b>Subota</b>, 12. novembar</a></li>
-                                        <li><a href="#" date="2016-11-13"><b>Nedelja</b>, 13. novembar</a></li>
+                                        <li><a href="#" date="2016-11-07"><b>Понедељак</b>, 7. новембар</a></li>
+                                        <li><a href="#" date="2016-11-08"><b>Уторак</b>, 8. новембар</a></li>
+                                        <li><a href="#" date="2016-11-09"><b>Среда</b>, 9. новембар</a></li>
+                                        <li><a href="#" date="2016-11-10"><b>Четвртак</b>, 10. новембар</a></li>
+                                        <li><a href="#" date="2016-11-11"><b>Петак</b>, 11. новембар</a></li>
+                                        <li><a href="#" date="2016-11-12"><b>Субота</b>, 12. новембар</a></li>
+                                        <li><a href="#" date="2016-11-13"><b>Недеља</b>, 13. новембар</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -42,7 +42,7 @@
                 </li>
                 <li id="sidebar-filters-venues">
 
-                    <a href="#" mesto="svi"><span class="box"></span> Svi dogadjaji</a>
+                    <a href="#" mesto="svi"><span class="box"></span> Сви догађаји</a>
                     <!-- nemam pojma da li se negde koristi ovaj id -->
                 </li>
 
