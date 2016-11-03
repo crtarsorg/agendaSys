@@ -23,7 +23,7 @@
 .boja18{background-color: #4E777F ; } 
 .boja19{background-color: #626262 ; } 
 .ucesnik{
-        margin: 60px 0;
+    margin: 20px 0;
 }
 
 </style>
