@@ -113,7 +113,7 @@
 
                         $unosi .= <<<UNOS
                             <span class="event $boja" mesto='$mesto' tag='{$value->etip}'>
-                                <a href="{$value->elink}" class="name" id="$id">{$value->ename}<span class="vs">{$value->lcity}</span><span class="event-evpeople">{$value->epartneri} {$value->ladres} - {$value->lcity}</span></a>
+                                <a href="{$value->elink}" class="name" id="$id">{$value->ename}<span class="vs">{$value->lcity}</span><span class="event-evpeople">{$value->epartneri} <br/>{$value->lname}, {$value->ladres} - {$value->lcity}</span></a>
                             </span> 
                             
                             <div class="hidden">
