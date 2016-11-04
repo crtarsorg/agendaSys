@@ -19,7 +19,7 @@
                 <li class="ev_tags" id="sidebar-filters-dates">
                     <a class="url" href="/">
                        <!--  <span style="overflow:hidden;text-indent:-5000px" class="box summary">Opis</span> -->
-                        <span class="dtstart"> 7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend"> 13 новембар 2016<span class="value-title" title="2016-11-13"></span></span>
+                        <span class="dtstart"> 7<span class="value-title" title="2016-11-07"></span></span>-<span class="dtend">13. новембар 2016.<span class="value-title" title="2016-11-13"></span></span>
                     </a>
                     <div class="popover">
                         <div class="popover-content">

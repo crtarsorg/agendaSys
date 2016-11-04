@@ -76,6 +76,8 @@
 
                 $sadrzaj_detalji = detalji_eventa( $event, $ucesnici );    
 
+                $sadrzaj_detalji = str_replace("img/2poslanici.png","../img/2poslanici.png",$sadrzaj_detalji)	;
+
 
                 $unosi .= <<<UNOS
                     <span class="event $boja" mesto='$mesto' tag='{$event->etip}'>
