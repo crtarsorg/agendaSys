@@ -143,6 +143,11 @@ TEMP_SADR;
             case "Трстеник":$boja = 'boja8';$mesto="trstenik";break;
             case "Пожаревац":$boja = 'boja9';$mesto="pozarevac";break;
             case "Кикинда":$boja = 'boja10';$mesto="kikinda";break;
+
+
+            case "Руски крстур":$boja = 'boja11';$mesto="krstur";break;
+            case "Смедеревска паланка":$boja = 'boja12';$mesto="palanka";break;
+            case "Ужице":$boja = 'boja13';$mesto="uzice";break;
              
             default:
                     # code...
