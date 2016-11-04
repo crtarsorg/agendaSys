@@ -1,4 +1,4 @@
-<?php  
+<?php
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
@@ -30,6 +30,19 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 </head>
 <body>
+
+<script>
+$( document ).ready(function() {
+
+    $('.person h2 a').click(function(){
+        $(this.hash).css({top: $( this ).offset().top - $(document).scrollTop() , left: 10, position:'absolute'});   
+    })
+
+
+});
+
+</script>
+
 
 
 	<?php 
