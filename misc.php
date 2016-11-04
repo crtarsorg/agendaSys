@@ -132,6 +132,10 @@ TEMP_SADR;
 
         $temp_vals =  array( );
 
+        //$grad_val = preg_replace('\s+', ' ', $grad_val);
+
+         
+
         switch ( trim($grad_val)) {
             case "Београд":$boja = 'boja1';$mesto="beograd";break;
             case "Ниш":$boja = 'boja2';$mesto="nis";break;
@@ -145,13 +149,12 @@ TEMP_SADR;
             case "Кикинда":$boja = 'boja10';$mesto="kikinda";break;
 
 
-            case "Руски крстур":$boja = 'boja11';$mesto="krstur";break;
-            case "Смедеревска паланка":$boja = 'boja12';$mesto="palanka";break;
+            case "Руски Крстур":$boja = 'boja11';$mesto="krstur";break;
+            case "Смедеревска Паланка":$boja = 'boja12';$mesto="palanka";break;
             case "Ужице":$boja = 'boja13';$mesto="uzice";break;
              
             default:
-                    # code...
-                    break;
+                break;
         }   
 
         $temp_vals[] = $boja;
