@@ -137,21 +137,27 @@ TEMP_SADR;
          
 
         switch ( trim($grad_val)) {
-            case "Београд":$boja = 'boja1';$mesto="beograd";break;
+            case "Београд":$boja = 'boja11';$mesto="beograd";break;
             case "Ниш":$boja = 'boja2';$mesto="nis";break;
-            case "Панчево":$boja = 'boja3';$mesto="pancevo";break;
+            case "Панчево":$boja = 'boja8';$mesto="pancevo";break;
             case "Азања":$boja = 'boja4';$mesto="azanja";break;
             case "Рашка":$boja = 'boja5';$mesto="raska";break;
             case "Бујановац":$boja = 'boja6';$mesto="bujanovac";break;
             case "Зрењанин":$boja = 'boja7';$mesto="zrenjanin";break;
-            case "Трстеник":$boja = 'boja8';$mesto="trstenik";break;
+            case "Трстеник":$boja = 'boja3';$mesto="trstenik";break;
             case "Пожаревац":$boja = 'boja9';$mesto="pozarevac";break;
             case "Кикинда":$boja = 'boja10';$mesto="kikinda";break;
 
 
-            case "Руски Крстур":$boja = 'boja11';$mesto="krstur";break;
+            case "Руски Крстур":$boja = 'boja1';$mesto="krstur";break;
             case "Смедеревска Паланка":$boja = 'boja12';$mesto="palanka";break;
             case "Ужице":$boja = 'boja13';$mesto="uzice";break;
+
+
+            case "Краљево":$boja = 'boja14';$mesto="kraljevo";break;
+            case "Крушевац":$boja = 'boja15';$mesto="krusevac";break;
+            case "Рума":$boja = 'boja16';$mesto="ruma";break;
+
              
             default:
                 break;
@@ -183,7 +189,8 @@ TEMP_SADR;
              case "Презентација": $tip = "prezentacija";break;
              case "Округли сто": $tip = "sto";break;
              case "Улична акција": $tip = "akcija";break;
-
+             case "Онлајл активност": $tip = "online";break;
+             
              
             default:
                     # code...
