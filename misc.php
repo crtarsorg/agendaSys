@@ -96,8 +96,12 @@ ORD;
                     <hr style="clear:both">
 
                     <strong>Говорници</strong>
+                    <br>
                     
-                    $korisnici    
+                    <div>
+                        $korisnici  
+                    </div>
+                    
 
                 </div>
                 <br class="s-clr">
@@ -189,7 +193,7 @@ TEMP_SADR;
              case "Презентација": $tip = "prezentacija";break;
              case "Округли сто": $tip = "sto";break;
              case "Улична акција": $tip = "akcija";break;
-             case "Онлајл активност": $tip = "online";break;
+             case "Онлајн активност": $tip = "online";break;
              
              
             default:

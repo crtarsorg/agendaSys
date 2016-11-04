@@ -1,27 +1,6 @@
 <style type="text/css">
 
-.boja1{background-color: #2077B4; } 
-.boja2{background-color: #B0E0F8; } 
-.boja3{background-color: #7660AA; } 
-.boja4{background-color: #D67896; } 
-.boja5{background-color: #CB99C5; } 
-.boja6{background-color: #FEDDBD; } 
-.boja7{background-color: #FFDF80; } 
-.boja8{background-color: #DFBD2C; } 
-.boja9{background-color: #A3D17C; } 
-.boja10{background-color: #54B954; } 
 
-
-.boja10{background-color: #2BBAA6 ; } 
-.boja11{background-color: #1CBECF ; } 
-.boja12{background-color: #7DCCC3 ; } 
-.boja13{background-color: #F37F6D ; } 
-.boja14{background-color: #F8B8A9 ; } 
-.boja15{background-color: #CBBF8E ; } 
-.boja16{background-color: #C7C6C6 ; } 
-.boja17{background-color: #9E9893 ; } 
-.boja18{background-color: #4E777F ; } 
-.boja19{background-color: #626262 ; } 
 .ucesnik{
     margin: 20px 0;
 }
