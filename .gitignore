@@ -1,1 +1,5 @@
 .phpintel
+_data/
+api/listAllEvents.json
+api/listAllSpeakers.json
+api/speakersWithEvents.json
