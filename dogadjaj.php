@@ -31,10 +31,19 @@
 <head>
     <meta charset="UTF-8">
     <title><?php echo $naslov; ?> | Недељa парламентаризма</title>
+
+
+
+	<meta property="og:title" content="<?php echo $naslov; ?> | Недељa парламентаризма"/>
+    
+    <meta property="og:description" content="Погледајте детаље за догађај <?php echo $naslov; ?>">
+    <meta property="og:url" content="http://www.nedeljaparlamentarizma.rs/program/"/>
+    <meta property="og:site_name" content="Nedelja Parlamentarizma"/>
+    <meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../style2.css">
-    
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
     <style type="text/css">
 		.ucesnik {
