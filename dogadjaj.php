@@ -93,7 +93,10 @@
 
     <script>
     	$(function() {
-    		if(window.location.hostname =="www.nedeljaparlamentarizma.rs" ) $("#header-dogadjaj").hide()
+    		if(window.parent.location.hostname =="www.nedeljaparlamentarizma.rs" ) $("#header-dogadjaj").hide()
+
+    		console.log(window.parent.location);		
+
     	})
     </script>
 </head>
