@@ -93,9 +93,10 @@
 
     <script>
     	$(function() {
-    		if(window.parent.location.hostname =="www.nedeljaparlamentarizma.rs" ) $("#header-dogadjaj").hide()
+    		if(window.parent.location.hostname =="www.nedeljaparlamentarizma.rs" || document.referrer == "www.nedeljaparlamentarizma.rs") $("#header-dogadjaj").hide()
 
-    		console.log(window.parent.location);		
+    		console.log(window.parent.location);
+    		console.log(document.referrer);		
 
     	})
     </script>
