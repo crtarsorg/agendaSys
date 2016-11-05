@@ -93,7 +93,7 @@
 
     <script>
     	$(function() {
-    		if(/*window.parent ||*/ document.referrer == "www.nedeljaparlamentarizma.rs") $("#header-dogadjaj").hide()
+    		if(window.location.href.indexOf("program.nedelja") > 0) $("#header-dogadjaj").show()
 
     		
 
@@ -104,7 +104,7 @@
 <body>
 
 
-	<div id="header-dogadjaj">
+	<div id="header-dogadjaj" style="display: none">
     <div class="main-menu-container" style="display: none;">
         <div class="menu-main-menu-container">
             <ul id="menu-main-menu" class="menu">
