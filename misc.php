@@ -28,14 +28,16 @@
         $org = $user->sorg;
         $pozicija = $user->stitula;
 
+
+        //<a href="$link_ucesnik">
         return <<<ORD
             <div class="ucesnik">
-                <a  href="$link_ucesnik"> 
-                    <img class="avatar" src="$slika_ucesnika" alt="avatar">         
-                </a>                   
+                
+                <img class="avatar" src="$slika_ucesnika" alt="avatar">         
+                                 
                
                 <div style='height: 110px;'>
-                    <h2><a href="$link_ucesnik">$ime_ucesnika</a></h2>
+                    <h2>$ime_ucesnika</h2>
                
                     <div class="event-details-role">
                         <div class="event-details-company">$org
