@@ -34,6 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../css/bootstrap-custom.css">
     <link rel="stylesheet" type="text/css" href="../style.css">
     <link rel="stylesheet" type="text/css" href="../style2.css">
+    
 
     <style type="text/css">
 		.ucesnik {
@@ -62,11 +63,65 @@
 		a{
 			color: black;
 		}
+		#logo-orginal{
+		    max-width: 30%;
+		    display: inline-block;
+		}
+		.logo-description{
+		    display: inline-block;
+		    /* float: right; */
+		    max-width: 50%;
+		    margin: 10px 50px;
+		}
 
     </style>
 </head>
 
 <body>
+
+
+	<div id="header-dogadjaj">
+    <div class="main-menu-container" style="display: none;">
+        <div class="menu-main-menu-container">
+            <ul id="menu-main-menu" class="menu">
+                <li id="menu-item-8" class=""><a href="http://www.nedeljaparlamentarizma.rs/">Почетна</a></li>
+                <li id="menu-item-62" class=""><a href="http://www.nedeljaparlamentarizma.rs/o-nama/">О нама</a></li>
+                <li id="menu-item-908" class=""><a href="http://www.nedeljaparlamentarizma.rs/program/">Програм 2016</a></li>
+                <li id="menu-item-766" class=""><a href="http://www.nedeljaparlamentarizma.rs/category/vesti-2016/">Вести</a></li>
+                <li id="menu-item-51" class=""><a href="http://www.nedeljaparlamentarizma.rs/partneri/">Партнери</a></li>
+                <li id="menu-item-85" class=""><a href="http://www.nedeljaparlamentarizma.rs/kontakt/">Kонтакт</a></li>
+                <li id="menu-item-723" class=""><a href="#">2015</a>
+                    <ul class="sub-menu">
+                        <li id="menu-item-724" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-724"><a href="http://www.nedeljaparlamentarizma.rs/category/dogadjaji-2015/">Dogadjaji</a></li>
+                        <li id="menu-item-725" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-725"><a href="http://www.nedeljaparlamentarizma.rs/category/vesti-2015/">Vesti</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+    
+    <div class="logo-container">
+        <div id="logo-orginal" class="">
+            <a href="http://www.nedeljaparlamentarizma.rs/"><img src="http://www.nedeljaparlamentarizma.rs/wp-content/themes/responsive/img/недеља-парламентаризма-лого.png" width="408" height="139" alt="Nedelja Parlamentarizma"></a>
+        </div>
+        
+        <div class="logo-description">“Недеља парламентаризма је серија догађаја и активности којима се отвара форум за разговор о парламентарној демократији и учешћу грађана у демократским процесима.”</div>
+    </div>
+</div>
+
+<div id="container-header-menu">
+    <ul>
+        <li id="menu-link-schedule" class="menu-link">
+            <a href="../index.php" class="menu-link-active">Распоред</a>
+        </li>
+        <li id="menu-speakers" class="menu-link"><a href="../ucesnici.php" class="">Говорници</a></li>
+        
+    </ul>
+    <br class="s-clr">
+</div>
+
+
 
 
     <div class="container-inner">
