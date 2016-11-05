@@ -68,13 +68,25 @@
 		    display: inline-block;
 		}
 		.logo-description{
+		    top: 15px;
+    		position: absolute;
 		    display: inline-block;
 		    /* float: right; */
 		    max-width: 50%;
 		    margin: 10px 50px;
 		}
+		.logo-container{
+		    width: 85%;
+		    margin: auto;
+			}
 
     </style>
+
+    <script>
+    	$(function() {
+    		if(window.location.hostname =="www.nedeljaparlamentarizma.rs" ) $("#header-dogadjaj").hide()
+    	})
+    </script>
 </head>
 
 <body>
@@ -103,7 +115,7 @@
     
     <div class="logo-container">
         <div id="logo-orginal" class="">
-            <a href="http://www.nedeljaparlamentarizma.rs/"><img src="http://www.nedeljaparlamentarizma.rs/wp-content/themes/responsive/img/недеља-парламентаризма-лого.png" width="408" height="139" alt="Nedelja Parlamentarizma"></a>
+            <a href="http://www.nedeljaparlamentarizma.rs/"><img src="http://www.nedeljaparlamentarizma.rs/wp-content/themes/responsive/img/недеља-парламентаризма-лого.png" alt="Nedelja Parlamentarizma"></a>
         </div>
         
         <div class="logo-description">“Недеља парламентаризма је серија догађаја и активности којима се отвара форум за разговор о парламентарној демократији и учешћу грађана у демократским процесима.”</div>
