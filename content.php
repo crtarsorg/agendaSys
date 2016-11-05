@@ -98,6 +98,8 @@
                             <div class="hidden">
                                 <br style="clear:both">
                                 $sadrzaj_detalji
+                                <br>
+                                <a href="http://program.nedeljaparlamentarizma.rs/dogadjaj/{$value->eid}" target="_blank">Линк</a>    
                                 <br style="clear:both">
                             </div> 
                             
