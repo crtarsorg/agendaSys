@@ -1,3 +1,9 @@
+<?php
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: PUT, GET, POST");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+?>
+
 <?php  
 
  	include_once 'misc/array_group_by.php';
@@ -93,9 +99,11 @@
 
     <script>
     	$(function() {
-    		if(window.location.href.indexOf("program.nedelja") > 0) $("#header-dogadjaj").show()
+    		if(window.location.href.indexOf("program.nedelja") > 0) {
+    			$("#header-dogadjaj").show()
+    		}
 
-    		
+    	console.log(window.parent.location);	
 
     	})
     </script>
