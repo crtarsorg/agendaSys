@@ -93,10 +93,9 @@
 
     <script>
     	$(function() {
-    		if(window.parent || document.referrer == "www.nedeljaparlamentarizma.rs") $("#header-dogadjaj").hide()
-    			
-    		console.log(window.parent.location);
-    		console.log(document.referrer);		
+    		if(/*window.parent ||*/ document.referrer == "www.nedeljaparlamentarizma.rs") $("#header-dogadjaj").hide()
+
+    		
 
     	})
     </script>
