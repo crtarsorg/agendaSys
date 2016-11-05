@@ -104,7 +104,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     			$("#header-dogadjaj").show()
     		}
 
-    	console.log(window.parent.location);	
+    	$(window.parent).scrollTop();	
 
     	})
     </script>
