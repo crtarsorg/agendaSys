@@ -122,7 +122,10 @@ function ucesnik($index, $podaci_ucesnik)
 	foreach ($podaci_ucesnik as $value) {
 		$id_event = $value->eid;
 		$name_event = $value->ename;	
-		$lista_eventova .= "$name_event <br/>"; //<a href='#$id_event'></a>
+		if($value->eid == 102)
+			$lista_eventova .= " <a href='dogadjaj/$id_event'>$name_event</a> <br/>";
+		else
+			$lista_eventova .= "$name_event <br/>"; //<a href='#$id_event'></a>
 	}
 
 
