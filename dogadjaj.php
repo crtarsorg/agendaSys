@@ -99,7 +99,8 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
     <script>
     	$(function() {
-    		if(window.location.href.indexOf("program.nedelja") > 0) {
+    		if(window.location != window.parent.location)
+    			/*(window.location.href.indexOf("program.nedelja") > 0)*/ {
     			$("#header-dogadjaj").show()
     		}
 
