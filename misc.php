@@ -169,6 +169,9 @@ TEMP_SADR;
             case "Крагујевац":$boja = 'boja19';$mesto="kragujevac";break;
             case "Ужице":$boja = 'boja20';$mesto="uzice";break;
 
+            case "Лозница":$boja = 'boja21';$mesto="loznica";break;
+            case "Чачак":$boja = 'boja22';$mesto="cacak";break;
+
              
             default:
                 break;

@@ -12,16 +12,18 @@
 .boja10{background-color: #54B954; } 
 
 
-.boja10{background-color: #2BBAA6 ; } 
-.boja11{background-color: #1CBECF ; } 
-.boja12{background-color: #7DCCC3 ; } 
-.boja13{background-color: #F37F6D ; } 
-.boja14{background-color: #F8B8A9 ; } 
-.boja15{background-color: #CBBF8E ; } 
-.boja16{background-color: #C7C6C6 ; } 
-.boja17{background-color: #9E9893 ; } 
-.boja18{background-color: #4E777F ; } 
-.boja19{background-color: #626262 ; } 
+.boja11{background-color: #2BBAA6 ; } 
+.boja12{background-color: #1CBECF ; } 
+.boja13{background-color: #7DCCC3 ; } 
+.boja14{background-color: #F37F6D ; } 
+.boja15{background-color: #F8B8A9 ; } 
+.boja16{background-color: #CBBF8E ; } 
+.boja17{background-color: #C7C6C6 ; } 
+.boja18{background-color: #9E9893 ; } 
+.boja19{background-color: #4E777F ; } 
+.boja20{background-color: #626262 ; } 
+.boja21{background-color: #8CC63E ; } 
+.boja22{background-color: #D3423B ; } 
 </style>
 
 
