@@ -5,6 +5,9 @@
     margin: 20px 0;
 }
 
+.prosao{cursor: pointer;}
+.prosao>.periodi{display: none;}
+
 </style>
 
 
@@ -25,6 +28,14 @@
         el_temp.next().toggleClass('hidden', 1000);
 
     })
+
+
+    $(function() {
+        $(".prosao").on("click tap", function (ev) {
+            $(this).children('.periodi').toggle();
+        })
+    })
+    
 </script>
 
 
@@ -128,11 +139,19 @@ PERIOD;
                         //ok ima samo niz dana i datuma, tako da nije previse tesko
                         $dan_nedelja = "";
                         $dan_mesec = $dan_key ;
-                        $formated_date = date('d. m. Y.', strtotime($dan_mesec) );
+                        $dan = strtotime($dan_mesec) ;
+                        $formated_date = date('d. m. Y.', $dan );
                         
 
+                        $prosao = "";
+
+                           
+
+                        if($dan < time()  -(60*60*24)) 
+                            $prosao = "prosao";
+
                        $main_template = <<<MAIN
-                            <div class="jedan_dan" date="$dan_mesec">
+                            <div class="jedan_dan $prosao" date="$dan_mesec">
                                 <a class="container-anchor" id="$dan_mesec"></a>
         
                                 <div class="container-header ">
@@ -141,8 +160,10 @@ PERIOD;
                                     </div>
                                 </div>
                                 <div class="container-top">&nbsp;</div>
-
-                                $periodi
+                                <div class="periodi">
+                                    $periodi
+                                </div>
+                                
 
                             </div>               
 
