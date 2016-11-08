@@ -52,7 +52,39 @@ $mysqli = @new mysqli($hostname_mysqlcon, $username_mysqlcon, $password_mysqlcon
 ?>';
 
     file_put_contents('admin/config.php', $newConf);
-    checkConn();
+    createDB();
+
+}
+
+function createDB(){
+
+    include("admin/config.php");
+    if (!$mysqli || $mysqli->connect_errno) {
+        echo ('Connect failed: <b>' . $mysqli->connect_error.'</b>');
+        echo ('<br>You credentials are not valid. You should recreate your config file. Complete form below.<br><br> ');
+        startInstaller();
+        die();
+    } else {
+        echo "config OK<br>";
+        echo "creating database structure<br>";
+
+        $sql = file_get_contents("admin/agenda.sql");
+        if (!$mysqli->multi_query($sql)) {
+            echo("Multi query failed: (" . $mysqli->errno . ") " . $mysqli->error);
+            exit();
+        }
+        do {
+            if ($res = $mysqli->store_result()) {
+                $res->free();
+            }
+        } while ($mysqli->more_results() && $mysqli->next_result());
+
+
+        die("Done...");
+    }
+
+
+
 
 }
 
