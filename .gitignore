@@ -5,3 +5,4 @@ api/listAllSpeakers.json
 api/speakersWithEvents.json
 .htaccess
 spkimages/
+admin/config.php
