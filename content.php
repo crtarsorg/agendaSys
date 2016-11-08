@@ -139,8 +139,8 @@ PERIOD;
                         //ok ima samo niz dana i datuma, tako da nije previse tesko
                         $dan_nedelja = "";
                         $dan_mesec = $dan_key ;
-                        $dan = strtotime($dan_mesec) ;
-                        $formated_date = date('d. m. Y.', $dan );
+                        $dan = @strtotime($dan_mesec) ;
+                        $formated_date = @date('d. m. Y.', $dan );
                         
 
                         $prosao = "";
