@@ -36,7 +36,7 @@
                 <img class="avatar" src="$slika_ucesnika" alt="avatar">         
                                  
                
-                <div style='height: 110px;'>
+                <div style='height: 110px;margin-top: 10px;'>
                     <h2>$ime_ucesnika</h2>
                
                     <div class="event-details-role">

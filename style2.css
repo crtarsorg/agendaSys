@@ -43,7 +43,25 @@ a:hover {  text-decoration: underline; }
 /* font sizes for everything */
 #main-one h1 {font-size: 20px;font-weight:700}
 #main-one #logo h1 a {font-size:40px;}
-#main-one h2 {font-size:16px;font-weight:700;    margin-left: 150px ;max-width: 300px;}
+#main-one h2 {
+  font-size:16px;font-weight:700; 
+  max-width: 300px;
+}
+@media screen  and (min-width:1000px) {
+  #main-one h2 {    
+    margin-left: 150px ;    
+  }
+}
+
+
+@media screen  and (max-width:1000px) {
+  #main-one h2 {    
+    text-align: center;
+  }
+}
+
+
+
 #main-one h3 {font-size:12px;}
 #main-one h4 {font-size:14px;}
 
@@ -1499,8 +1517,20 @@ padding:0;
 .event-details-role {
 font-size:14px;
 max-width: 350px;
-margin-left: 150px;
 text-align: left;
+}
+
+@media screen  and (min-width:1000px) {
+ .event-details-role  {    
+    margin-left: 150px ;    
+  }
+}
+
+
+@media screen  and (max-width:1000px) {
+  .event-details-role  {    
+    text-align: center;
+  }
 }
 
 .person h2 a{
