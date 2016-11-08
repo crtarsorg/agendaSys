@@ -1,7 +1,12 @@
-<?php  
+<?php
+//TODO - delete header Access-Control-Allow-Origin
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: PUT, GET, POST");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+//include installer if exist
+define('Installer', TRUE);
+if (file_exists("install/index.php")) { require("install/index.php"); die(); }
+
 ?>
 
 <html >
