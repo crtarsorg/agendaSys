@@ -4,3 +4,4 @@ api/listAllEvents.json
 api/listAllSpeakers.json
 api/speakersWithEvents.json
 .htaccess
+spkimages/
