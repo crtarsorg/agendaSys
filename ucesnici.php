@@ -17,7 +17,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
     <meta property="og:image" content="http://nedeljaparlamentarizma.rs/wp-content/uploads/2016/11/np.png"/>
 
 	<link rel="stylesheet" href="css/bootstrap-custom.css">
-	<link rel="stylesheet" href="style2.css?20">
+	<link rel="stylesheet" href="style2.css?27">
 	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
