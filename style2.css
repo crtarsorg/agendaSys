@@ -74,7 +74,7 @@ a:hover {  text-decoration: underline; }
 .menu-link-me-avatar .avatar-letter,#page-me #content h2{font-size:20px;line-height:32px;}
 
 .person {min-width:250px;width:48%;float:left;position:relative;border-radius: 4px;margin:0 10px 10px 0;padding: 2px;}
-.person h2 {margin:8px 0 3px;    margin-left: 150px;     text-align: left;}
+.person h2 {margin:8px 0 3px;         text-align: left;}
 
 #page-list .person, #page-event .person{width:98%;}
 #page-list .container {border-bottom:2px solid rgba(0,0,0,.1);padding-top:10px;}
@@ -1529,7 +1529,7 @@ text-align: left;
 
 @media screen  and (max-width:1000px) {
   .event-details-role  {    
-    text-align: center;
+    /* text-align: center; */
   }
 }
 
@@ -1537,7 +1537,7 @@ text-align: left;
 font-size:20px;
 }
 
-.avatar {height:100px; width:100px;border-radius: 300px;float:left;margin:0 auto;}
+.avatar {height:100px; width:100px;border-radius: 300px;float:left;margin:0 auto;margin-right: 15px;}
 .avatar img { max-height: 200px;width: auto;margin:0 auto; }
 .avatar-letter {font-size:80px;line-height:195px;font-weight:400;
     height:200px;
@@ -1545,6 +1545,7 @@ font-size:20px;
     width:200px;
     display:inline-block;
     border-radius:300px;
+
 }
 
 .event-details .avatar, .event-details .avatar-letter, #page-event_edit .avatar-letter {
